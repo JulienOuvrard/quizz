@@ -34,14 +34,14 @@
   },
   "annotations": [
     {
-      "begin": 0,
-      "end": 44210,
+      "begin": 330489,
+      "end": 338384,
       "tags": null,
       "media": "m20131010",
       "content": {
         "mimetype": "application/x-video-quizz",
         "data": {
-          "type": "unique_choice",
+          "type": "multiple_choice",
           "question":"Qu'est-ce que l'<em>informatique ubiquitaire</em> ?",
            "resource": "<img src=\"fff.png\">",
            "answers":
@@ -71,32 +71,40 @@
       },
       "id": "q1"
     },
+      
     {
-      "begin": 44210,
-      "end": 72028,
+     "begin": 1082723,
+      "end": 1114534,
       "tags": null,
       "media": "m20131010",
       "content": {
         "mimetype": "application/x-video-quizz",
         "data": {
-          "type": "multiple_choice",
-          "question":"Pourquoi l'informatique est-elle compliquée à comprendre pour les vieux ?",
+          "type": "Unique_choice",
+          "question":"Qu'est-ce que <em>L’effet du petit monde</em> ?",
            "resource": "<img src=\"fff.png\">",
            "answers":
            [
              {
-               "content":  "C'est qu'elle est pr\u00e9sente <strong>partout</strong>",
-               "feedback":"Effectivement, l'<em>informatique ubiquitaire</em>....",
-               "correct": true
+               "content":  "Nous permet de comprendre que le monde est petit",
+               "feedback":"Effectivement, c'est la reponse fausse",
+               
              },
              {
-			   "content":"C'est qu'elle a disparu",
-               "feedback":"H\u00e9las, comme nous pouvons le voir \u00e0 10:20 .... "
+			   "content":"Permet de comprendre que la distance entre deux individus dans un réseau social est faible",
+               "feedback":"Effectivement, c'est la reponse bonne",
+                 "correct": true
              },
              {
-               "content":"C'est uniquement pour les Cor\u00e9ens",
+               "content":"Indique que dès qu’un réseau social est grand,tout le monde se connait",
                "feedback":"Aucun lien logique avec le cours, retour \u00e0 5:20 pour comprendre..." 
+             },
+               {
+               "content":"N’est pas applicable pour la Corée du Nord",
+               "feedback":"Ecoute le cour gars !!!!." 
              }
+               
+               
            ]
          }
       },
@@ -108,7 +116,409 @@
         "dc:creator": "oaubert"
       },
       "id": "q2"
+    },  
+      {
+     "begin": 1082723,
+      "end": 1114534,
+      "tags": null,
+      "media": "m20131010",
+      "content": {
+        "mimetype": "application/x-video-quizz",
+        "data": {
+          "type": "Unique_choice",
+          "question":"Qu'est-ce que <em>L’effet du petit monde</em> ?",
+           "resource": "<img src=\"fff.png\">",
+           "answers":
+           [
+             {
+               "content":  "Nous permet de comprendre que le monde est petit",
+               "feedback":"Effectivement, c'est la reponse fausse"
+               
+             },
+             {
+			   "content":"Permet de comprendre que la distance entre deux individus dans un réseau social est faible",
+               "feedback":"Effectivement, c'est la reponse bonne",
+                 "correct": true
+             },
+             {
+               "content":"Indique que dès qu’un réseau social est grand,tout le monde se connait",
+               "feedback":"Aucun lien logique avec le cours, retour \u00e0 5:20 pour comprendre..." 
+             },
+               {
+               "content":"N’est pas applicable pour la Corée du Nord",
+               "feedback":"Ecoute le cour gars !!!!." 
+             }
+               
+               
+           ]
+         }
+      },
+      "meta": {
+        "dc:contributor": "oaubert",
+        "id-ref": "Quizz",
+        "dc:created": "2013-12-19",
+        "dc:modified": "2013-12-19",
+        "dc:creator": "oaubert"
+      },
+      "id": "q2"
+    },    
+      {
+      "begin": 1864260,
+      "end": 1951242,
+      "tags": null,
+      "media": "m20131010",
+      "content": {
+        "mimetype": "application/x-video-quizz",
+        "data": {
+          "type": "Unique_choice",
+          "question":"Qu’est ce qui est vrai ?",
+           "resource": "<img src=\"q3.png\">",
+           "answers":
+           [
+             {
+               "content":  "Il y a 8 arêtes",
+               "feedback":"Effectivement, c'est la reponse fausse",
+               "correct": true
+             },
+             {
+			   "content":"Il y a 6 sommets",
+               "feedback":"Effectivement, c'est la reponse bonne",
+                 "correct": true
+             },
+             {
+               "content":"Le graphe est non orienté",
+               "feedback":"Aucun lien logique avec le cours" 
+             },
+               {
+               "content":"Il y a 2 boucles",
+               "feedback":"Il y en a bien plus que ca ."
+             }
+               
+               
+           ]
+         }
+      },
+      "meta": {
+        "dc:contributor": "oaubert",
+        "id-ref": "Quizz",
+        "dc:created": "2013-12-19",
+        "dc:modified": "2013-12-19",
+        "dc:creator": "oaubert"
+      },
+      "id": "q3"
     },
+      
+      {
+      "begin": 2142853,
+      "end": 2151781,
+      "tags": null,
+      "media": "m20131010",
+      "content": {
+        "mimetype": "application/x-video-quizz",
+        "data": {
+          "type": "Unique_choice",
+          "question":"Quels sont les deux graphes isomorphes ?",
+           "resource": "<img src=\"q4.png\">",
+           "answers":
+           [
+             {
+               "content":  "<em>A</em> et K",
+               "feedback":"<b>Archi faux</b>"
+             },
+             {
+			   "content":"K et X",
+               "feedback":"Effectivement, c'est la reponse bonne",
+                 "correct": true
+             },
+             {
+               "content":"F et X",
+               "feedback":"non et non" 
+             },
+               {
+               "content":"A et F",
+               "feedback":"pas du tout"
+             }
+               
+               
+           ]
+         }
+      },
+      "meta": {
+        "dc:contributor": "oaubert",
+        "id-ref": "Quizz",
+        "dc:created": "2013-12-19",
+        "dc:modified": "2013-12-19",
+        "dc:creator": "oaubert"
+      },
+      "id": "q4"
+    },
+      
+         {
+      "begin": 2151781,
+      "end": 2160709,
+      "tags": null,
+      "media": "m20131010",
+      "content": {
+        "mimetype": "application/x-video-quizz",
+        "data": {
+          "type": "Unique_choice",
+          "question":"L’isomorphisme de graphes ?",
+           "resource": "<img src=\"fff.png\">",
+           "answers":
+           [
+             {
+               "content":  "Facile",
+               "feedback":"tu peux faire Alt+F4 alors ",
+               "correct": true
+             },
+             {
+			   "content":"Compliqué",
+               "feedback":" il faut bien suivre le cours alors"
+             },
+             {
+               "content":"incompréhensible",
+               "feedback":"aie aie faut s'accrocher"
+             },
+               {
+               "content":"N’est pas applicable pour la Corée du Nord",
+               "feedback":"pas du tout"
+             }
+               
+               
+           ]
+         }
+      },
+      "meta": {
+        "dc:contributor": "oaubert",
+        "id-ref": "Quizz",
+        "dc:created": "2013-12-19",
+        "dc:modified": "2013-12-19",
+        "dc:creator": "oaubert"
+      },
+      "id": "q5"
+    },
+      
+      {
+      "begin": 2717082,
+      "end": 2777315,
+      "tags": null,
+      "media": "m20131010",
+      "content": {
+        "mimetype": "application/x-video-quizz",
+        "data": {
+          "type": "Unique_choice",
+          "question":"Dans la matrice ci-dessous le 1 en rouge correspond à",
+           "resource": "<img src=\"q6.png\">",
+           "answers":
+           [
+             {
+               "content":  "Une boucle sur le sommet 2 ",
+               "feedback":"tu peux faire Alt+F4 alors "
+               
+             },
+             {
+			   "content":"Une boucle sur le sommet 3",
+               "feedback":" on parle d'axe ici reviens a la minutes 48:30"
+             },
+             {
+               "content":"Un arc de 2 vers 3",
+               "feedback":"oui c'est ca ",
+                "correct": true
+             },
+               {
+               "content":"Un arc de 3 vers 2",
+               "feedback":"pas du tout"
+             }
+               
+               
+           ]
+         }
+      },
+      "meta": {
+        "dc:contributor": "oaubert",
+        "id-ref": "Quizz",
+        "dc:created": "2013-12-19",
+        "dc:modified": "2013-12-19",
+        "dc:creator": "oaubert"
+      },
+      "id": "q6"
+    },
+      
+      {
+      "begin": 2819552,
+      "end": 2887169,
+      "tags": null,
+      "media": "m20131010",
+      "content": {
+        "mimetype": "application/x-video-quizz",
+        "data": {
+          "type": "Unique_choice",
+          "question":"L’ambigüité ?",
+           "resource": "<img src=\"fff.png\">",
+           "answers":
+           [
+             {
+               "content":  "facile",
+               "feedback":"Bien joué",
+                 "correct": true  
+             },
+             {
+			   "content":"compliqué",
+               "feedback":" revise encore un peu"
+             },
+             {
+               "content":"incompréhensible",
+               "feedback":" recommence le chapitre"
+             },
+               {
+               "content":"N’est pas applicable pour la Corée du Nord",
+               "feedback":"pas du tout"
+             }
+                
+           ]
+         }
+      },
+      "meta": {
+        "dc:contributor": "oaubert",
+        "id-ref": "Quizz",
+        "dc:created": "2013-12-19",
+        "dc:modified": "2013-12-19",
+        "dc:creator": "oaubert"
+      },
+      "id": "q8"
+    },
+        {
+      "begin": 2887169,
+      "end": 2929313,
+      "tags": null,
+      "media": "m20131010",
+      "content": {
+        "mimetype": "application/x-video-quizz",
+        "data": {
+          "type": "Unique_choice",
+          "question":"A ou B est vrai",
+           "resource": "<img src=\"fff.png\">",
+           "answers":
+           [
+             {
+               "content":  "sauf quand A et B sont faux en même temps",
+               "feedback":"tu peux faire Alt+F4 alors ",
+                 "correct": true  
+             },
+             {
+			   "content":"si exactement l’un parmi A et B sont vrais",
+               "feedback":" on parle d'axe ici reviens a la minutes 48:30"
+             },
+             {
+               "content":"si A et B sont vrais en même temps",
+               "feedback":"oui c'est ca "
+             },
+               {
+               "content":"Si A=>B",
+               "feedback":"pas du tout"
+             }
+                
+           ]
+         }
+      },
+      "meta": {
+        "dc:contributor": "oaubert",
+        "id-ref": "Quizz",
+        "dc:created": "2013-12-19",
+        "dc:modified": "2013-12-19",
+        "dc:creator": "oaubert"
+      },
+      "id": "q7"
+    },
+      
+        {
+      "begin": 3414825,
+      "end": 3481716,
+      "tags": null,
+      "media": "m20131010",
+      "content": {
+        "mimetype": "application/x-video-quizz",
+        "data": {
+          "type": "Unique_choice",
+          "question":"|{(a,b),(b,c),(b,d)}|=",
+           "resource": "<img src=\"fff.png\">",
+           "answers":
+           [
+             {
+               "content":  "3",
+               "feedback":"il y a 3 éléments dans l’ensemble, qui sont des paires (ou des couples)",
+                 "correct": true  
+             },
+             {
+			   "content":"4",
+               "feedback":" reviens à la minutes 58:30"
+             },
+             {
+               "content":"6",
+               "feedback":"divisé par 2 "
+             },
+               {
+               "content":"Indéfini",
+               "feedback":"pas du tout"
+             }
+                
+           ]
+         }
+      },
+      "meta": {
+        "dc:contributor": "oaubert",
+        "id-ref": "Quizz",
+        "dc:created": "2013-12-19",
+        "dc:modified": "2013-12-19",
+        "dc:creator": "oaubert"
+      },
+      "id": "q9"
+    },  
+       {
+       "begin": 3632854,
+      "end": 3800363,
+      "tags": null,
+      "media": "m20131010",
+      "content": {
+        "mimetype": "application/x-video-quizz",
+        "data": {
+          "type": "Unique_choice",
+          "question":"Les personnes qui ont confiance uniquement en Erwann ?",
+           "resource": "<img src=\"fff.png\">",
+           "answers":
+           [
+             {
+               "content":  "A",
+               "feedback":"Nan"
+                 
+             },
+             {
+			   "content":"B",
+               "feedback":" Bien joué",
+             "correct": true 
+             },
+             {
+               "content":"C",
+               "feedback":"Nan"
+             },
+               {
+               "content":"D",
+               "feedback":"pas du tout"
+             }
+                
+           ]
+         }
+      },
+      "meta": {
+        "dc:contributor": "oaubert",
+        "id-ref": "Quizz",
+        "dc:created": "2013-12-19",
+        "dc:modified": "2013-12-19",
+        "dc:creator": "oaubert"
+      },
+      "id": "q10"
+    },  
+            
     {
       "begin": 0,
       "end": 44210,
