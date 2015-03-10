@@ -5,11 +5,11 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Réseaux sociaux et graphes -  Colin de la Higuera - 10/10/2013</title>
-        <link href="../../main.css" rel="stylesheet" type="text/css">
-        <link href="../../hopscotch.css" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="libs/jquery-ui.css">
-        <script type="text/javascript" src="metadataplayer/LdtPlayer-core.js"></script>
-        <script type="text/javascript" src="../../libs/hopscotch.min.js"></script>
+        <link href="./main.css" rel="stylesheet" type="text/css">
+        <link href="./hopscotch.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="./libs/jquery-ui.css">
+        <script type="text/javascript" src="./metadataplayer/LdtPlayer-core.js"></script>
+        <script type="text/javascript" src="./hopscotch.min.js"></script>
   </head>
 
     <body>
@@ -107,7 +107,7 @@
       </footer>
         <script type="text/javascript">
 IriSP.libFiles.defaultDir = "libs/";
-IriSP.widgetsDir = "metadataplayer";
+IriSP.widgetsDir = "widgets";
 IriSP.language = "fr";
 var username = "";
 var _metadata = {
@@ -203,6 +203,16 @@ var _config = {
               show_end_time: false,
               show_controls: false,
               default_thumbnail: 'imagecache/contribution.svg',
+              polemics: []
+          },
+          {
+              type: "Quizz",
+              container: "",
+              annotation_type: "Quizz",
+              show_creator: true,
+              show_audio: false,
+              show_end_time: false,
+              show_controls: false,
               polemics: []
           },
           {

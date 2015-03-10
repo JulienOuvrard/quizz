@@ -39,6 +39,82 @@
       "tags": null,
       "media": "m20131010",
       "content": {
+        "mimetype": "application/x-video-quizz",
+        "data": {
+          "type": "unique_choice",
+          "question":"Qu'est-ce que l'<em>informatique ubiquitaire</em> ?",
+           "resource": "<img src=\"fff.png\">",
+           "answers":
+           [
+             {
+               "content":  "C'est qu'elle est pr\u00e9sente <strong>partout</strong>",
+               "feedback":"Effectivement, l'<em>informatique ubiquitaire</em>....",
+               "correct": true
+             },
+             {
+			   "content":"C'est qu'elle a disparu",
+               "feedback":"H\u00e9las, comme nous pouvons le voir \u00e0 10:20 .... "
+             },
+             {
+               "content":"C'est uniquement pour les Cor\u00e9ens",
+               "feedback":"Aucun lien logique avec le cours, retour \u00e0 5:20 pour comprendre..." 
+             }
+           ]
+         }
+      },
+      "meta": {
+        "dc:contributor": "oaubert",
+        "id-ref": "Quizz",
+        "dc:created": "2013-12-19",
+        "dc:modified": "2013-12-19",
+        "dc:creator": "oaubert"
+      },
+      "id": "q1"
+    },
+    {
+      "begin": 44210,
+      "end": 72028,
+      "tags": null,
+      "media": "m20131010",
+      "content": {
+        "mimetype": "application/x-video-quizz",
+        "data": {
+          "type": "multiple_choice",
+          "question":"Pourquoi l'informatique est-elle compliquée à comprendre pour les vieux ?",
+           "resource": "<img src=\"fff.png\">",
+           "answers":
+           [
+             {
+               "content":  "C'est qu'elle est pr\u00e9sente <strong>partout</strong>",
+               "feedback":"Effectivement, l'<em>informatique ubiquitaire</em>....",
+               "correct": true
+             },
+             {
+			   "content":"C'est qu'elle a disparu",
+               "feedback":"H\u00e9las, comme nous pouvons le voir \u00e0 10:20 .... "
+             },
+             {
+               "content":"C'est uniquement pour les Cor\u00e9ens",
+               "feedback":"Aucun lien logique avec le cours, retour \u00e0 5:20 pour comprendre..." 
+             }
+           ]
+         }
+      },
+      "meta": {
+        "dc:contributor": "oaubert",
+        "id-ref": "Quizz",
+        "dc:created": "2013-12-19",
+        "dc:modified": "2013-12-19",
+        "dc:creator": "oaubert"
+      },
+      "id": "q2"
+    },
+    {
+      "begin": 0,
+      "end": 44210,
+      "tags": null,
+      "media": "m20131010",
+      "content": {
         "mimetype": "application/x-ldt-structured",
         "description": "",
         "img": {
@@ -1853,6 +1929,15 @@
       "dc:modified": "2013-12-19",
       "dc:created": "2013-12-19",
       "id": "at_contributions"
+    },
+    {
+      "dc:contributor": "oaubert",
+      "dc:creator": "oaubert",
+      "dc:title": "Quizz Module",
+      "id": "Quizz",
+      "dc:description": "",
+      "dc:modified": "2015-03-04",
+      "dc:created": "2015-03-04"
     }
   ]
 }
