@@ -43,7 +43,6 @@
         "data": {
           "type": "unique_choice",
           "question":"Qu'est-ce que l'<em>informatique ubiquitaire</em> ?",
-           "resource": "<img src=\"fff.png\">",
            "answers":
            [
              {
@@ -81,7 +80,6 @@
         "data": {
           "type": "unique_choice",
           "question":"Qu'est-ce que <em>L’effet du petit monde</em> ?",
-           "resource": "<img src=\"fff.png\">",
            "answers":
            [
              {
@@ -214,7 +212,6 @@
         "data": {
           "type": "unique_choice",
           "question":"L’isomorphisme de graphes ?",
-           "resource": "<img src=\"fff.png\">",
            "answers":
            [
              {
@@ -303,7 +300,6 @@
         "data": {
           "type": "unique_choice",
           "question":"L’ambigüité ?",
-           "resource": "<img src=\"fff.png\">",
            "answers":
            [
              {
@@ -346,7 +342,6 @@
         "data": {
           "type": "unique_choice",
           "question":"A ou B est vrai",
-           "resource": "<img src=\"fff.png\">",
            "answers":
            [
              {
@@ -389,7 +384,6 @@
         "data": {
           "type": "unique_choice",
           "question":"|{(a,b),(b,c),(b,d)}|=",
-           "resource": "<img src=\"fff.png\">",
            "answers":
            [
              {
@@ -432,7 +426,6 @@
         "data": {
           "type": "unique_choice",
           "question":"Les personnes qui ont confiance uniquement en Erwann ?",
-           "resource": "<img src=\"fff.png\">",
            "answers":
            [
              {
