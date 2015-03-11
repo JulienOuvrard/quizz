@@ -70,54 +70,8 @@
         "dc:creator": "oaubert"
       },
       "id": "q1"
-    },
-      
+    },     
     {
-     "begin": 1082723,
-      "end": 1114534,
-      "tags": null,
-      "media": "m20131010",
-      "content": {
-        "mimetype": "application/x-video-quizz",
-        "data": {
-          "type": "Unique_choice",
-          "question":"Qu'est-ce que <em>L’effet du petit monde</em> ?",
-           "resource": "<img src=\"fff.png\">",
-           "answers":
-           [
-             {
-               "content":  "Nous permet de comprendre que le monde est petit",
-               "feedback":"Effectivement, c'est la reponse fausse",
-               
-             },
-             {
-			   "content":"Permet de comprendre que la distance entre deux individus dans un réseau social est faible",
-               "feedback":"Effectivement, c'est la reponse bonne",
-                 "correct": true
-             },
-             {
-               "content":"Indique que dès qu’un réseau social est grand,tout le monde se connait",
-               "feedback":"Aucun lien logique avec le cours, retour \u00e0 5:20 pour comprendre..." 
-             },
-               {
-               "content":"N’est pas applicable pour la Corée du Nord",
-               "feedback":"Ecoute le cour gars !!!!." 
-             }
-               
-               
-           ]
-         }
-      },
-      "meta": {
-        "dc:contributor": "oaubert",
-        "id-ref": "Quizz",
-        "dc:created": "2013-12-19",
-        "dc:modified": "2013-12-19",
-        "dc:creator": "oaubert"
-      },
-      "id": "q2"
-    },  
-      {
      "begin": 1082723,
       "end": 1114534,
       "tags": null,
@@ -161,8 +115,8 @@
         "dc:creator": "oaubert"
       },
       "id": "q2"
-    },    
-      {
+    },      
+    {
       "begin": 1864260,
       "end": 1951242,
       "tags": null,
@@ -177,8 +131,7 @@
            [
              {
                "content":  "Il y a 8 arêtes",
-               "feedback":"Effectivement, c'est la reponse fausse",
-               "correct": true
+               "feedback":"Effectivement, c'est la reponse fausse"
              },
              {
 			   "content":"Il y a 6 sommets",
@@ -206,8 +159,7 @@
         "dc:creator": "oaubert"
       },
       "id": "q3"
-    },
-      
+    }, 
       {
       "begin": 2142853,
       "end": 2151781,
@@ -252,8 +204,7 @@
       },
       "id": "q4"
     },
-      
-         {
+    {
       "begin": 2151781,
       "end": 2160709,
       "tags": null,
@@ -297,8 +248,7 @@
       },
       "id": "q5"
     },
-      
-      {
+    {
       "begin": 2717082,
       "end": 2777315,
       "tags": null,
@@ -343,8 +293,7 @@
       },
       "id": "q6"
     },
-      
-      {
+    {
       "begin": 2819552,
       "end": 2887169,
       "tags": null,
@@ -387,7 +336,7 @@
       },
       "id": "q8"
     },
-        {
+    {
       "begin": 2887169,
       "end": 2929313,
       "tags": null,
@@ -430,8 +379,7 @@
       },
       "id": "q7"
     },
-      
-        {
+    {
       "begin": 3414825,
       "end": 3481716,
       "tags": null,
@@ -474,7 +422,7 @@
       },
       "id": "q9"
     },  
-       {
+    {
        "begin": 3632854,
       "end": 3800363,
       "tags": null,
@@ -517,8 +465,7 @@
         "dc:creator": "oaubert"
       },
       "id": "q10"
-    },  
-            
+    },         
     {
       "begin": 0,
       "end": 44210,
