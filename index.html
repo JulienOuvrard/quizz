@@ -68,6 +68,7 @@
             <ul id="tab_labels">
               <li><a title="Diapositives" id="tab_label_slides" href="#tab-slides">Diapos</a></li>
               <li><a title="Plan des diapositives" id="tab_label_toc" href="#tab-toc">Plan diapos</a></li>
+              <li><a title="Questions" id="tab_quizz_toc" href="#tab-quizz">Liste quizz</a></li>
               
               <li><a title="Notes personnelles" id="tab_label_contributions" href="#tab-contributions">Notes</a></li>
               
@@ -79,6 +80,9 @@
               </div>
               <div id="tab-toc" class="tab-content">
                 <div id="TocContainer"></div>
+              </div>
+              <div id="tab-quizz" class="tab-content">
+                <div id="QuizzListContainer"></div>
               </div>
               
               <div id="tab-contributions" class="tab-content">
@@ -198,6 +202,17 @@ var _config = {
               editable: true,
               editable_storage: local_id,
               limit_count: 240,
+              show_creator: true,
+              show_audio: false,
+              show_end_time: false,
+              show_controls: false,
+              default_thumbnail: 'imagecache/contribution.svg',
+              polemics: []
+          },
+          {
+              type: "AnnotationsList",
+              container: "QuizzListContainer",
+              annotation_type: "Quizz",
               show_creator: true,
               show_audio: false,
               show_end_time: false,
