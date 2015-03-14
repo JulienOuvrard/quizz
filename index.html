@@ -68,6 +68,7 @@
             <ul id="tab_labels">
               <li><a title="Diapositives" id="tab_label_slides" href="#tab-slides">Diapos</a></li>
               <li><a title="Plan des diapositives" id="tab_label_toc" href="#tab-toc">Plan diapos</a></li>
+              <li><a title="Questions" id="tab_quizz_toc" href="#tab-quizz">Liste quizz</a></li>
               
               <li><a title="Notes personnelles" id="tab_label_contributions" href="#tab-contributions">Notes</a></li>
               
@@ -79,6 +80,9 @@
               </div>
               <div id="tab-toc" class="tab-content">
                 <div id="TocContainer"></div>
+              </div>
+              <div id="tab-quizz" class="tab-content">
+                <div id="QuizzListContainer"></div>
               </div>
               
               <div id="tab-contributions" class="tab-content">
@@ -125,7 +129,7 @@ var _config = {
     widgets: [
           {
               type: "SlideVideoPlayer",
-              video: "camera.mp4",
+              video: "http://comin-ocw.org/media/infol1/20131010-camera-reference.mp4",
               width: '100%',
               url_transform: function(n) {
                   var elements = /(.+)\.(\w\w\w)$/.exec(n);
@@ -198,6 +202,17 @@ var _config = {
               editable: true,
               editable_storage: local_id,
               limit_count: 240,
+              show_creator: true,
+              show_audio: false,
+              show_end_time: false,
+              show_controls: false,
+              default_thumbnail: 'imagecache/contribution.svg',
+              polemics: []
+          },
+          {
+              type: "AnnotationsList",
+              container: "QuizzListContainer",
+              annotation_type: "Quizz",
               show_creator: true,
               show_audio: false,
               show_end_time: false,
@@ -294,7 +309,6 @@ var _config = {
         </script>
         <script type="text/javascript" src="libs/jquery.min.js"></script>
         <script type="text/javascript" src="libs/jquery-ui.min.js"></script>
-        <script type="text/javascript" src="libs/jquery.ui.touch-punch.min.js"></script>
         <script type="text/javascript">
           var name = localStorage.getItem('mla-username') || "Anonyme";
           $("#username").val(name)
