@@ -7,9 +7,8 @@
         <title>Réseaux sociaux et graphes -  Colin de la Higuera - 10/10/2013</title>
         <link href="./main.css" rel="stylesheet" type="text/css">
         <link href="./hopscotch.css" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="./libs/jquery-ui.css">
-        <script type="text/javascript" src="./metadataplayer/LdtPlayer-core.js"></script>
-        <script type="text/javascript" src="./hopscotch.min.js"></script>
+        <link rel="stylesheet" href="libs/jquery-ui.css">
+        <link rel="stylesheet" href="libs/jquery.splitter.css">
   </head>
 
     <body>
@@ -59,7 +58,7 @@
 
       <section id="content">
         <section class="column playercolumn">
-          <h1><span title="Réseaux sociaux et graphes" class="meta-title">Réseaux sociaux et graphes</span> - <span class="meta-author"> Colin de la Higuera</span></h1>
+          <h1 class="coconotes"><span title="Réseaux sociaux et graphes" class="meta-title">Réseaux sociaux et graphes</span> - <span class="meta-author"> Colin de la Higuera</span></h1>
           <div id="LdtPlayer"></div>
         </section>
 
@@ -69,9 +68,8 @@
               <li><a title="Diapositives" id="tab_label_slides" href="#tab-slides">Diapos</a></li>
               <li><a title="Plan des diapositives" id="tab_label_toc" href="#tab-toc">Plan diapos</a></li>
               <li><a title="Questions" id="tab_quizz_toc" href="#tab-quizz">Liste quizz</a></li>
-              
+              <li><a title="Édition de quizz" id="tab_label_quizz_creation" href="#tab-quizz-edit">Édition Quizz</a></li>
               <li><a title="Notes personnelles" id="tab_label_contributions" href="#tab-contributions">Notes</a></li>
-              
               <li><a title="À propos de cette vidéo" id="tab_label_about" href="#tab-about">About</a></li>
             </ul>
             <div id="tab_content">
@@ -84,11 +82,14 @@
               <div id="tab-quizz" class="tab-content">
                 <div id="QuizzListContainer"></div>
               </div>
-              
+              <div id="tab-quizz-edit" class="tab-content">
+                <div id="QuizzEditContainer"></div>
+              </div>
               <div id="tab-contributions" class="tab-content">
-                <div id="ContributionsNotes">Créez vos notes via la zone de saisie sous la vidéo. </div>
+                <div class="tab_content_header" id="ContributionsNotes">Créez vos notes via la zone de saisie sous la vidéo. </div>
                 <div id="ContributionsContainer"></div>
-              </div>              <div id="tab-about" class="tab-content">
+              </div>
+                            <div id="tab-about" class="tab-content">
                 <div id="AboutContainer">
                   <h3><em>Réseaux sociaux et graphes</em> par  Colin de la Higuera</h3>
                   <p class="about-license">
@@ -109,8 +110,14 @@
           <a title="Réseaux sociaux et graphes de  Colin de la Higuera is licensed under a Creative Commons Attribution 4.0 International License" rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img class="licenseicon" alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
         </div>
       </footer>
-        <script type="text/javascript">
-IriSP.libFiles.defaultDir = "libs/";
+<script type="text/javascript" src="libs/jquery.min.js"></script>
+<script type="text/javascript" src="libs/jquery-ui.min.js"></script>
+<script type="text/javascript" src="libs/jquery.splitter.js"></script>
+<script type="text/javascript" src="libs/jquery.ui.touch-punch.min.js"></script>
+<script type="text/javascript" src="metadataplayer/LdtPlayer-core.js"></script>
+<script type="text/javascript" src="libs/hopscotch.min.js"></script>
+<script type="text/javascript">
+            IriSP.libFiles.defaultDir = "libs/";
 IriSP.widgetsDir = "widgets";
 IriSP.language = "fr";
 var username = "";
@@ -153,9 +160,17 @@ var _config = {
           { type: "Slider" },
           { type: "Controller",
             disable_annotate_btn: true,
-            always_show_search: true
+            always_show_search: true,
+            /* 
+            create_quizz_callback: function () {
+                $("#QuizzCreatorContainer").show();
+                _tabs.tabs("option", "active", get_tab_index('#tab-contributions'));
+            },
+            enable_quizz_toggle: true
+            */
           },
           { type: "QuizzCreator",
+            container: "QuizzEditContainer",
             annotation_type: "Quizz",
             minimize_annotation_widget : true,
             pause_on_write: true,
@@ -323,8 +338,6 @@ var _config = {
             });
           document._myPlayer = _myPlayer;
         </script>
-        <script type="text/javascript" src="libs/jquery.min.js"></script>
-        <script type="text/javascript" src="libs/jquery-ui.min.js"></script>
         <script type="text/javascript">
           var name = localStorage.getItem('mla-username') || "Anonyme";
           $("#username").val(name)
@@ -391,7 +404,7 @@ var _config = {
           })();
         <!-- End Piwik Code -->
           function on_resize() {
-              $("[widget-type=Segments]").resize();
+              IriSP.jQuery("[widget-type=Segments]").resize();
           }
 
           var splitter;
@@ -403,7 +416,7 @@ var _config = {
                   limit: 100,
                   onDragEnd: function (e) {
                       on_resize();
-                      return true;
+                      return false;
                   }
               });
               window.setTimeout(function () { splitter.position('66%');

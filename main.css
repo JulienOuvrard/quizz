@@ -45,7 +45,7 @@ body, p, h1, h2, h3 {
     font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 }
 
-h1  {
+h1.coconotes  {
     display: block;
     margin: 0px;
     width: 100%;
@@ -247,6 +247,29 @@ h2 {
 }
 
 #tab-contributions .Ldt-AnnotationsList-Duration {
+}
+
+#tab-publiccontributions .Ldt-AnnotationsList-Title,
+#tab-livecontributions .Ldt-AnnotationsList-Title {
+    margin: 2px;
+    text-align: left;
+}
+#tab-publiccontributions .Ldt-AnnotationsList-Title a,
+#tab-livecontributions .Ldt-AnnotationsList-Title a {
+    color: black !important;
+    font-weight: normal;
+}
+
+#tab-publiccontributions .Ldt-AnnotationsList-Description,
+#tab-livecontributions .Ldt-AnnotationsList-Description {
+    display: none;
+    margin: 2px 38px 0px 2px;
+    text-align: left;
+}
+
+#tab-publiccontributions .Ldt-AnnotationsList-ThumbContainer,
+#tab-livecontributions .Ldt-AnnotationsList-ThumbContainer {
+    display: none;
 }
 
 .tab_content_header {
