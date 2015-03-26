@@ -68,9 +68,8 @@
               <li><a title="Diapositives" id="tab_label_slides" href="#tab-slides">Diapos</a></li>
               <li><a title="Plan des diapositives" id="tab_label_toc" href="#tab-toc">Plan diapos</a></li>
               <li><a title="Questions" id="tab_quizz_toc" href="#tab-quizz">Liste quizz</a></li>
-              
+              <li><a title="Édition de quizz" id="tab_label_quizz_creation" href="#tab-quizz-edit">Édition Quizz</a></li>
               <li><a title="Notes personnelles" id="tab_label_contributions" href="#tab-contributions">Notes</a></li>
-              
               <li><a title="À propos de cette vidéo" id="tab_label_about" href="#tab-about">About</a></li>
             </ul>
             <div id="tab_content">
@@ -83,7 +82,9 @@
               <div id="tab-quizz" class="tab-content">
                 <div id="QuizzListContainer"></div>
               </div>
-              
+              <div id="tab-quizz-edit" class="tab-content">
+                <div id="QuizzEditContainer"></div>
+              </div>
               <div id="tab-contributions" class="tab-content">
                 <div class="tab_content_header" id="ContributionsNotes">Créez vos notes via la zone de saisie sous la vidéo. </div>
                 <div id="ContributionsContainer"></div>
@@ -169,7 +170,7 @@ var _config = {
             */
           },
           { type: "QuizzCreator",
-            container: "AboutContainer",
+            container: "QuizzEditContainer",
             annotation_type: "Quizz",
             minimize_annotation_widget : true,
             pause_on_write: true,
