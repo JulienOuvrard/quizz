@@ -161,13 +161,12 @@ var _config = {
           { type: "Controller",
             disable_annotate_btn: true,
             always_show_search: true,
-            /* 
             create_quizz_callback: function () {
-                $("#QuizzCreatorContainer").show();
-                _tabs.tabs("option", "active", get_tab_index('#tab-contributions'));
+				console.log("Quizz callback");
+                $("#QuizzEditContainer").show();
+                _tabs.tabs("option", "active", get_tab_index('#tab-quizz-edit'));
             },
             enable_quizz_toggle: true
-            */
           },
           { type: "QuizzCreator",
             container: "QuizzEditContainer",
