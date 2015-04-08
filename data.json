@@ -59,8 +59,12 @@
                "feedback":"Aucun lien logique avec le cours, retour \u00e0 5:20 pour comprendre..." 
              }
            ]
-         }
+         },
+		 "title" : "Qu'est-ce que l'<em>informatique ubiquitaire</em> ?",
+		 "description" : "Qu'est-ce que l'<em>informatique ubiquitaire</em> ?"
       },
+	  "type": "Quizz",
+	  "type_title":"Quizz Module",
       "meta": {
         "dc:contributor": "oaubert",
         "id-ref": "Quizz",
@@ -103,8 +107,12 @@
                
                
            ]
-         }
+         },
+		 "title" : "Qu'est-ce que <em>L’effet du petit monde</em> ?",
+		 "description" : "Qu'est-ce que <em>L’effet du petit monde</em> ?"
       },
+	  "type": "Quizz",
+	  "type_title":"Quizz Module",
       "meta": {
         "dc:contributor": "oaubert",
         "id-ref": "Quizz",
@@ -147,8 +155,12 @@
                
                
            ]
-         }
+         },
+		 "title" : "Qu’est ce qui est vrai ?",
+		 "description" : "Qu’est ce qui est vrai ?"
       },
+	  "type": "Quizz",
+	  "type_title":"Quizz Module",
       "meta": {
         "dc:contributor": "oaubert",
         "id-ref": "Quizz",
@@ -191,8 +203,12 @@
                
                
            ]
-         }
+         },
+		 "title" : "Quels sont les deux graphes isomorphes ?",
+		 "description" : "Quels sont les deux graphes isomorphes ?"
       },
+	  "type": "Quizz",
+	  "type_title":"Quizz Module",
       "meta": {
         "dc:contributor": "oaubert",
         "id-ref": "Quizz",
@@ -234,8 +250,12 @@
                
                
            ]
-         }
+         },
+		 "title" : "L’isomorphisme de graphes ?",
+		 "description" : "L’isomorphisme de graphes ?"
       },
+	  "type": "Quizz",
+	  "type_title":"Quizz Module",
       "meta": {
         "dc:contributor": "oaubert",
         "id-ref": "Quizz",
@@ -279,8 +299,12 @@
                
                
            ]
-         }
+         },
+		 "title" : "Dans la matrice ci-dessous le 1 en rouge correspond à",
+		 "description" : "Dans la matrice ci-dessous le 1 en rouge correspond à"
       },
+	  "type": "Quizz",
+	  "type_title":"Quizz Module",
       "meta": {
         "dc:contributor": "oaubert",
         "id-ref": "Quizz",
@@ -321,8 +345,12 @@
              }
                 
            ]
-         }
+         },
+		 "title" : "L’ambigüité ?",
+		 "description" : "L’ambigüité ?"
       },
+	  "type": "Quizz",
+	  "type_title":"Quizz Module",
       "meta": {
         "dc:contributor": "oaubert",
         "id-ref": "Quizz",
@@ -363,8 +391,12 @@
              }
                 
            ]
-         }
+         },
+		 "title" : "A ou B est vrai",
+		 "description" : "A ou B est vrai"
       },
+	  "type": "Quizz",
+	  "type_title":"Quizz Module",
       "meta": {
         "dc:contributor": "oaubert",
         "id-ref": "Quizz",
@@ -405,8 +437,12 @@
              }
                 
            ]
-         }
+         },
+		 "title" : "|{(a,b),(b,c),(b,d)}|=",
+		 "description" : "|{(a,b),(b,c),(b,d)}|="
       },
+	  "type": "Quizz",
+	  "type_title":"Quizz Module",
       "meta": {
         "dc:contributor": "oaubert",
         "id-ref": "Quizz",
@@ -448,8 +484,12 @@
              }
                 
            ]
-         }
+         },
+		 "title" : "Les personnes qui ont confiance uniquement en Erwann ?",
+		 "description" : "Les personnes qui ont confiance uniquement en Erwann ?"
       },
+	  "type": "Quizz",
+	  "type_title":"Quizz Module",
       "meta": {
         "dc:contributor": "oaubert",
         "id-ref": "Quizz",
