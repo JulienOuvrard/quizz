@@ -1,0 +1,7 @@
+----------------------------------------------
+|				TODO						 |
+----------------------------------------------
+
+- Add an input for resources (Quizz)
+- Correct the fact that a freshly added annotation without refreshing the page isn't valid (content does not exist) while it is when we F5 the page
+- Correct the fact that if there are several quizz annotations added, the last one will be valid while the others won't be valid (content.data.{...} are undefined)

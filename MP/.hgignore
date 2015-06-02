@@ -1,0 +1,26 @@
+syntax: regexp
+^src/js/LdtPlayer\.min\.js$
+^src/css/LdtPlayer-release\.css$
+^build$
+^test/libs$
+^test/metadataplayer$
+\.mp4$
+\.dokuwiki$
+^\.pydevproject$
+^doc/.+\.html$
+^assets/player_bab_ldt/player_bab_ldt/bin$
+^\.settings/org\.eclipse\.core\.runtime\.prefs$
+^sbin/build/compil-to-platform\.sh$
+\.webm$
+^downloads/.+\.zip$
+^sbin/build/compil-to-polemic-tweet\.sh$
+^.git$
+^.gitignore$
+
+syntax: glob
+build/LdtPlayer-release.js
+build/LdtPlayer.min.js
+*.swp
+*.orig
+src/js/site.js
+doc/jsdoc/*
