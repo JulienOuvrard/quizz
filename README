@@ -1,13 +1,13 @@
-#Description
+###Description
 Example files for video quiz creation
 
 The video URL can be specified through its URL http://comin-ocw.org/media/infol1/20131010-camera-reference.mp4
 but it is advised to download it once and keep it in the directory as camera.mp4
 
-#How to install
-1 Clone this project and the Metadataplayer
-2 Compile Metadataplayer with this 2 line commands : cd metadataplayer/sbin/build and ./compil.sh
-3 Symlink the 3 folders : libs, metadataplayer and widgets
+###How to install
+1-Clone this project and the Metadataplayer
+2-Compile Metadataplayer with this 2 line commands : cd metadataplayer/sbin/build and ./compil.sh
+3-Symlink the 3 folders : libs, metadataplayer and widgets
 libs and metadataplayer can be found in the "test" folder after compilation
 widgets is placed in the "src" folder
 the line command to do this step is : ln -s 'path-to-the-folder-to-link' name_of_the_link
