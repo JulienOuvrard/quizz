@@ -1,7 +1,0 @@
-Example files for video quiz creation
-
-The libs/ and metadataplayer/ dirs should be symlinked from metadataplayer sources
-which are generated in metadataplayer/test after running the sbin/bin/compil.sh script.
-
-The video URL can be specified through its URL http://comin-ocw.org/media/infol1/20131010-camera-reference.mp4
-but it is advised to download it once and keep it in the directory as camera.mp4
