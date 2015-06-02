@@ -115,7 +115,7 @@
 <script type="text/javascript" src="../libs/jquery.splitter.js"></script>
 <!-- <script type="text/javascript" src="../libs/jquery.ui.touch-punch.min.js"></script> -->
 <script type="text/javascript" src="../metadataplayer/LdtPlayer-core.js"></script>
-<script type="text/javascript" src="../hopscotch.min.js"></script>
+<script type="text/javascript" src="hopscotch.min.js"></script>
 <script type="text/javascript">
             IriSP.libFiles.defaultDir = "../libs/";
 IriSP.widgetsDir = "widgets";
