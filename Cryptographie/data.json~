@@ -3401,7 +3401,7 @@
              },
              {
 	       "content":"5000",
-               "feedback":"Le système est asynchrone il en faut donc le nombre exact"
+               "feedback":""
              },
              {
                "content":"25000",
@@ -3442,7 +3442,7 @@
            [
              {
                "content":"AES et ETR",
-               "feedback":"AES l'est bien mais ETR non"
+               "feedback":""
              },
              {
 	       "content":"DES et AES",
@@ -3451,11 +3451,11 @@
              },
              {
                "content":"AEF et DRF",
-               "feedback":"Ce ne sont pas les bons systèmes"
+               "feedback":""
              },
              {
                "content":"DAS et EAS",
-               "feedback":"Avez vous bien écouté ?" 
+               "feedback":"" 
              }
            ]
          },
