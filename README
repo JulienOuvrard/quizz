@@ -1,13 +1,32 @@
-###Description
-Example files for video quiz creation
+### Description
+This project is a set of 3 example of video quizz creation for the Coco plateform.
+The Coco plateform is a MOOC plateform developped by the LINA. 
 
-The video URL can be specified through its URL http://comin-ocw.org/media/infol1/20131010-camera-reference.mp4
-but it is advised to download it once and keep it in the directory as camera.mp4
+### How to install
+These steps are only for development purpose.
 
-###How to install
-1-Clone this project and the Metadataplayer
-2-Compile Metadataplayer with this 2 line commands : cd metadataplayer/sbin/build and ./compil.sh
-3-Symlink the 3 folders : libs, metadataplayer and widgets
-libs and metadataplayer can be found in the "test" folder after compilation
-widgets is placed in the "src" folder
-the line command to do this step is : ln -s 'path-to-the-folder-to-link' name_of_the_link
+1- Clone this project and the Metadataplayer
+2- Compile Metadataplayer with this 2 line commands : 
+
+    cd metadataplayer/sbin/build
+    ./compil.sh
+
+3- Symlink the 3 folders : libs, metadataplayer and widgets
+
+ - libs and metadataplayer can be found in the *test* folder after
+   compilation 
+ - widgets is placed in the *src* folder
+
+the line command to do this step is : 
+
+    ln -s 'path-to-the-folder-to-link' name_of_the_link
+
+*For the testing of this project these 3 folders hasn't been symlinked but it's advised to do it.*
+### Bugs on visualization
+
+ - Mozilla Firefox : Ok 
+ - Google Chrome : Need an HTML Server
+	 - Simple tool to do this : python SimpleHTTPServer
+    `python -m SimpleHTTPServer`
+
+ - Safari : Not tested yet
