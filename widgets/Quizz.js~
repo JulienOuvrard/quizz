@@ -67,7 +67,7 @@ IriSP.Widgets.Quizz.prototype.update = function(annotation) {
 		var score = "";
 		score += '<span class="Ldt-Quizz-Correct-Answer">' + correctness[0] +'</span> / <span class="Ldt-Quizz-Incorrect-Answer">' + correctness[1] + '</span>';
 		$(".Ldt-Quizz-Index").html("Q"+ (annotation.number+1) + "/" + this.totalAmount);
-		$(".Ldt-Quizz-Score").html(score);
+		$(".Ldt-Quizz-Index").html(score);
 		this.question = new IriSP.Widgets.UniqueChoiceQuestion(annotation);
 
 		if (annotation.content.data.type == "multiple_choice") {

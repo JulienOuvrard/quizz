@@ -19,38 +19,38 @@
 	width:100%;
 }
 
-.Ldt-QuizzCreator-Questions-Answer {
+.Ldt-QuizzCreator-Questions-Question {
 	margin-top:5px;
 	border-top: 1px solid black;
 }
 
-.Ldt-QuizzCreator-Questions-Answer div {
+.Ldt-QuizzCreator-Questions-Question div {
 	display:inline-block;
 	height:100%;
 	vertical-align:middle;
 }
 
-.Ldt-QuizzCreator-Questions-Answer-Correct {
+.Ldt-QuizzCreator-Questions-Question-Correct {
 	width: 30px;
 }
 
-.Ldt-QuizzCreator-Questions-Answer-Content {
+.Ldt-QuizzCreator-Questions-Question-Content {
 	width: calc(100% - 80px);
 }
 
-.Ldt-QuizzCreator-Questions-Answer-Content input, .Ldt-QuizzCreator-Questions-Answer-Content textarea {
+.Ldt-QuizzCreator-Questions-Question-Content input, .Ldt-QuizzCreator-Questions-Question-Content textarea {
 	width: calc(100% - 20px);
 }
 
-.Ldt-QuizzCreator-Questions-Answer-Time, .Ldt-QuizzCreator-Questions-Answer-Delete{
+.Ldt-QuizzCreator-Questions-Question-Time, .Ldt-QuizzCreator-Questions-Question-Delete{
 	/*vertical-align: top !important;
 	padding-top: 27px !important;*/
 }
 
-.Ldt-QuizzCreator-Questions-Answer-Time input {
+.Ldt-QuizzCreator-Questions-Question-Time input {
 	width:60px;
 }
 
-.Ldt-QuizzCreator-Questions-Answer-Delete {
+.Ldt-QuizzCreator-Questions-Question-Delete {
 	width: 20px;
 }
