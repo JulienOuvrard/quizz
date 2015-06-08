@@ -64,6 +64,12 @@ body {
  img {
     vertical-align: middle;
 }
+.svg-content{
+display: block;
+margin: auto;
+top: 0;
+left:0;
+}
 
 /*
  * Allow only vertical resizing of textareas.
