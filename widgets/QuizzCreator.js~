@@ -267,7 +267,7 @@ IriSP.Widgets.QuizzCreator.prototype.addQuestion = function(annotation, number) 
 		+		'<input type="text" class="Ldt-QuizzCreator-Answer-Content" data-question="'+ this.nbAnswers() +'" id="question'+ this.nbAnswers() +'" value="'+ answers[i].content +'" /><br />'
 		+		'Commentaire :<br/><textarea class="Ldt-QuizzCreator-Answer-Feedback" data-question="'+ this.nbAnswers() +'" id="feedback'+ this.nbAnswers() +'">'+ answers[i].feedback +'</textarea>'
 		+	'</div>' 
-		+ 	'<div class="Ldt-QuizzCreator-Questions-Answer-Delete"><button class="Ldt-QuizzCreator-Remove" id="remove'+ this.nbAnswers() +'">x</button></div>'
+		+ 	'<div class="Ldt-QuizzCreator-Questions-Answer-Delete"><div class="Ldt-QuizzCreator-Remove" id="remove'+ this.nbAnswers() +'">&nbsp;</div></div>'
 		+	'</div>';
 	}
 
@@ -307,7 +307,7 @@ IriSP.Widgets.QuizzCreator.prototype.onQuestionAdd = function(e) {
 	+ 	'<div class="Ldt-QuizzCreator-Questions-Answer-Correct">'+ this.question.renderTemplate(null, this.nbAnswers()) +'</div>'
 	+ 	'<div class="Ldt-QuizzCreator-Questions-Answer-Content">Réponse :<br /><input class="Ldt-QuizzCreator-Answer-Content" data-question="'+ this.nbAnswers() +'" type="text" id="question'+ this.nbAnswers() +'" /><br />'
 	+	'Commentaire :<br/><textarea class="class="Ldt-QuizzCreator-Answer-Feedback" data-question="'+ this.nbAnswers() +'"id="feedback'+ this.nbAnswers()+'"></textarea></div>'
-	+ 	'<div class="Ldt-QuizzCreator-Questions-Answer-Delete"><button class="Ldt-QuizzCreator-Remove" id="remove'+ this.nbAnswers() +'">x</button></div>'
+	+ 	'<div class="Ldt-QuizzCreator-Questions-Answer-Delete"><div class="Ldt-QuizzCreator-Remove" id="remove'+ this.nbAnswers() +'">&nbsp;</div></div>'
 	+ '</div>';
 
 
