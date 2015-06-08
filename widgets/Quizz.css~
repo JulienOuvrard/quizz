@@ -21,6 +21,7 @@
 
 .Ldt-Quizz-Score {
 	display:inline-block;
+	margin-left:80%;
 }
 
 .Ldt-Quizz-Index {

@@ -81,7 +81,7 @@ IriSP.Widgets.Quizz.prototype.update = function(annotation) {
 		for (i = 0; i < answers.length; i++) {
 			//alert( answers[i].content);
 
-			output += '<div class="quizz-question-block"><p>' + this.question.renderTemplate(answers[i], i) + '<span class="quizz-question-label">'+ answers[i].content + '</span></p>';
+			output += '<div class="quizz-question-block"><p>' + this.question.renderQuizzTemplate(answers[i], i) + '<span class="quizz-question-label">'+ answers[i].content + '</span></p>';
 			var color = (answers[i].correct == true) ? "quizz-question-correct-feedback" : "quizz-question-incorrect-feedback";
 			output += '<div class="quizz-question-feedback '+ color +'">'+ answers[i].feedback +'</div>';
 			output += '</div>';
@@ -330,13 +330,17 @@ IriSP.Widgets.UniqueChoiceQuestion.prototype.isCorrect = function(answer, valid)
 	return false;
 }
 
+IriSP.Widgets.UniqueChoiceQuestion.prototype.renderQuizzTemplate = function(answer, identifier) {
+	return '<input type="radio" class="quizz-question Ldt-Quizz-Question-Check-'+ identifier +'" name="question" data-question="'+ identifier +'" value="' + identifier + '" />';
+}
+
 IriSP.Widgets.UniqueChoiceQuestion.prototype.renderTemplate = function(answer, identifier) {
-	return '<input type="radio" class="quizz-question Ldt-Quizz-Question-Check-'+ identifier +'" name="question" data-question="'+ identifier +'" value="' + identifier + '" /> ';
+	return '<input type="radio" id="img-answer-'+ identifier +'" class="quizz-question-edition Ldt-Quizz-Question-Check-'+ identifier +'" name="question" data-question="'+ identifier +'" value="' + identifier + '" /><label for="img-answer-'+ identifier +'"></label>';
 }
 
 IriSP.Widgets.UniqueChoiceQuestion.prototype.renderFullTemplate = function(answer, identifier) {
 	var correct = (answer.correct == true) ? "checked=\"checked\"" : "";
-	return '<input type="radio" '+ correct +' class="quizz-question Ldt-Quizz-Question-Check-'+ identifier +'" name="question" data-question="'+ identifier +'" value="' + identifier + '" /> ';
+	return '<input type="radio" id="img-answer-'+ identifier +'" '+ correct +' class="quizz-question-edition Ldt-Quizz-Question-Check-'+ identifier +'" name="question" data-question="'+ identifier +'" value="' + identifier + '" /><label for="img-answer-'+ identifier +'"></label>';
 }
 
 //MultipleChoice Question
@@ -356,12 +360,16 @@ IriSP.Widgets.MultipleChoiceQuestion.prototype.isCorrect = function(answer, vali
 	return false;
 }
 
-IriSP.Widgets.MultipleChoiceQuestion.prototype.renderTemplate = function(answer, identifier) {
+IriSP.Widgets.MultipleChoiceQuestion.prototype.renderQuizzTemplate = function(answer, identifier) {
 	return '<input type="checkbox" class="quizz-question Ldt-Quizz-Question-Check-'+ identifier +'" name="question['+ identifier +']" data-question="'+ identifier +'" value="' + identifier + '" /> ';
+}
+
+IriSP.Widgets.MultipleChoiceQuestion.prototype.renderTemplate = function(answer, identifier) {
+	return '<input type="checkbox" id="img-answer-'+ identifier +'" class="quizz-question Ldt-Quizz-Question-Check-'+ identifier +'" name="question['+ identifier +']" data-question="'+ identifier +'" value="' + identifier + '" /><label for="img-answer-'+ identifier +'"></label>';
 }
 
 IriSP.Widgets.MultipleChoiceQuestion.prototype.renderFullTemplate = function(answer, identifier) {
 	var correct = (answer.correct == true) ? "checked=\"checked\"" : "";
-	return '<input type="checkbox" '+ correct +' class="quizz-question Ldt-Quizz-Question-Check-'+ identifier +'" name="question['+ identifier +']" data-question="'+ identifier +'" value="' + identifier + '" /> ';
+	return '<input type="checkbox" id="img-answer-'+ identifier +'" '+ correct +' class="quizz-question Ldt-Quizz-Question-Check-'+ identifier +'" name="question['+ identifier +']" data-question="'+ identifier +'" value="' + identifier + '" /><label for="img-answer-'+ identifier +'"></label> ';
 }
 

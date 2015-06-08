@@ -178,3 +178,26 @@ input[type="button"] {
 input[value="Non"] {
   background-color: #F86060;
 }
+
+input.quizz-question-edition{
+    display:none;
+}
+
+
+input.quizz-question-edition[type='radio'] + label,
+input.quizz-question-edition[type='checkbox'] + label{
+	height:50px;
+	width:50px;
+	display:inline-block;
+	background:url(img/min_valid_sprites.png) -25px top no-repeat;
+	cursor:pointer;
+}
+
+input.quizz-question-edition[type='radio']:checked + label,
+input.quizz-question-edition[type='checkbox']:checked + label{
+	height:50px;
+	width:25px;
+	display:inline-block;
+	background:url(img/min_valid_sprites.png) left top no-repeat;
+	cursor:pointer;
+}
