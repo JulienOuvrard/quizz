@@ -42,15 +42,26 @@
 	width: calc(100% - 20px);
 }
 
+/*
 .Ldt-QuizzCreator-Questions-Answer-Time, .Ldt-QuizzCreator-Questions-Answer-Delete{
-	/*vertical-align: top !important;
-	padding-top: 27px !important;*/
+	vertical-align: top !important;
+	padding-top: 27px !important;
 }
+*/
 
 .Ldt-QuizzCreator-Questions-Answer-Time input {
 	width:60px;
 }
 
 .Ldt-QuizzCreator-Questions-Answer-Delete {
-	width: 20px;
+	width: 15px;
+	height:15px;
+}
+
+.Ldt-QuizzCreator-Remove {
+	width: 16px;
+	height: 16px;
+    	margin-left: 8px;
+	cursor:pointer;
+    	background: url(img/delete.png);
 }
