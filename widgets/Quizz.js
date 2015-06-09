@@ -313,6 +313,14 @@ IriSP.Widgets.Quizz.prototype.draw = function() {
     });
 }
 
+//Generates uid
+IriSP.Widgets.Widget.prototype.generateUid = function () {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        var r = Math.random()*16|0, v = c === 'x' ? r : (r&0x3|0x8);
+        return v.toString(16);
+    });
+}
+
 //UniqueChoice Question
 IriSP.Widgets.UniqueChoiceQuestion = function(annotation) {
     this.annotation = annotation;
@@ -335,13 +343,16 @@ IriSP.Widgets.UniqueChoiceQuestion.prototype.renderQuizzTemplate = function(answ
 }
 
 IriSP.Widgets.UniqueChoiceQuestion.prototype.renderTemplate = function(answer, identifier) {
-	return '<input type="radio" id="img-answer-'+ identifier +'" class="quizz-question-edition Ldt-Quizz-Question-Check-'+ identifier +'" name="question" data-question="'+ identifier +'" value="' + identifier + '" /><label for="img-answer-'+ identifier +'"></label>';
+	var id = this.generateUid();
+	return '<input type="radio" id="'+ id +'" class="quizz-question-edition Ldt-Quizz-Question-Check-'+ identifier +'" name="question" data-question="'+ identifier +'" value="' + identifier + '" /><label for="'+ id +'"></label>';
 }
 
 IriSP.Widgets.UniqueChoiceQuestion.prototype.renderFullTemplate = function(answer, identifier) {
 	var correct = (answer.correct == true) ? "checked=\"checked\"" : "";
-	return '<input type="radio" id="img-answer-'+ identifier +'" '+ correct +' class="quizz-question-edition Ldt-Quizz-Question-Check-'+ identifier +'" name="question" data-question="'+ identifier +'" value="' + identifier + '" /><label for="img-answer-'+ identifier +'"></label>';
+	var id = this.generateUid();
+	return '<input type="radio" id="'+ id +'" '+ correct +' class="quizz-question-edition Ldt-Quizz-Question-Check-'+ identifier +'" name="question" data-question="'+ identifier +'" value="' + identifier + '" /><label for="'+ id +'"></label>';
 }
+
 
 //MultipleChoice Question
 IriSP.Widgets.MultipleChoiceQuestion = function(annotation) {
@@ -365,11 +376,14 @@ IriSP.Widgets.MultipleChoiceQuestion.prototype.renderQuizzTemplate = function(an
 }
 
 IriSP.Widgets.MultipleChoiceQuestion.prototype.renderTemplate = function(answer, identifier) {
-	return '<input type="checkbox" id="img-answer-'+ identifier +'" class="quizz-question Ldt-Quizz-Question-Check-'+ identifier +'" name="question['+ identifier +']" data-question="'+ identifier +'" value="' + identifier + '" /><label for="img-answer-'+ identifier +'"></label>';
+	var id = this.generateUid();
+	return '<input type="checkbox" id="'+ id +'" class="quizz-question Ldt-Quizz-Question-Check-'+ identifier +'" name="question['+ identifier +']" data-question="'+ identifier +'" value="' + identifier + '" /><label for="'+ id +'"></label>';
 }
 
 IriSP.Widgets.MultipleChoiceQuestion.prototype.renderFullTemplate = function(answer, identifier) {
 	var correct = (answer.correct == true) ? "checked=\"checked\"" : "";
-	return '<input type="checkbox" id="img-answer-'+ identifier +'" '+ correct +' class="quizz-question Ldt-Quizz-Question-Check-'+ identifier +'" name="question['+ identifier +']" data-question="'+ identifier +'" value="' + identifier + '" /><label for="img-answer-'+ identifier +'"></label> ';
+	var id = this.generateUid();
+	return '<input type="checkbox" id="'+ id +'" '+ correct +' class="quizz-question Ldt-Quizz-Question-Check-'+ identifier +'" name="question['+ identifier +']" data-question="'+ identifier +'" value="' + identifier + '" /><label for="'+ id +'"></label> ';
 }
+
 
