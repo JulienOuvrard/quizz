@@ -3115,7 +3115,7 @@
     {
       "begin": 240000,
       "end": 243000,
-      "tags": null,
+      "tags": ["informatique","math"],
       "media": "m20131025",
       "content": {
         "mimetype": "application/x-video-quizz",
