@@ -183,7 +183,7 @@ input.Ldt-Ctrl-SearchInput {
 }
 
 .Ldt-Ctrl-Quizz-Enable {
-	width:80px;
+	width:100px;
 }
 
 .Ldt-Ctrl-Quizz-Enable button, Ldt-Ctrl-Quizz-Create button {
