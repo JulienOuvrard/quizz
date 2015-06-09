@@ -118,7 +118,7 @@ IriSP.Widgets.AnnotationsList.prototype.annotationTemplate =
     + '<ul class="Ldt-AnnotationsList-Tags" >'
     +   '{{#tags}}'
     +   '{{#.}}'
-    +   '<li class="Ldt-AnnotationsList-Tags-Li">'
+    +   '<li class="Ldt-AnnotationsList-Tag-Li">'
     +     '<span>{{.}}</span>'
     +   '</li>'
     +   '{{/.}}'
