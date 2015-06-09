@@ -94,7 +94,9 @@ IriSP.Widgets.Quizz.prototype.update = function(annotation) {
 			$(".Ldt-Ressources-Overlay").html(annotation.content.data.resource);
 			$(".Ldt-Ressources-Overlay").show();
 		}
-
+		if (this.annotation.content.data.resource == "") {
+			$(".Ldt-Ressources-Overlay").hide();
+		}
 		$(".Ldt-Quizz-Overlay").show();
 		
 		$(".Ldt-Quizz-Submit").fadeIn();
