@@ -271,6 +271,10 @@ h2 {
 #tab-livecontributions .Ldt-AnnotationsList-ThumbContainer {
     display: none;
 }
+#tab-quizz .Ldt-AnnotationsList-Title{margin: 2px;}
+#tab-quizz .Ldt-AnnotationsList-ThumbContainer {
+   	display: none;
+}
 
 .tab_content_header {
     font-size: xx-small;
