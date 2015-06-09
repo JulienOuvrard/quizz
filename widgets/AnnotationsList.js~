@@ -114,6 +114,8 @@ IriSP.Widgets.AnnotationsList.prototype.annotationTemplate =
     + '{{#show_creator}}<span class="Ldt-AnnotationsList-Creator">{{ creator }}</span>{{/show_creator}}'
     + '</h3>'
     + '<p class="Ldt-AnnotationsList-Description Ldt-live-editable" data-editable_type="multiline" data-editable_value="{{hdescription}}" data-editable_id="{{id}}" data-editable_field="description">{{{hdescription}}}</p>'
+
+    + '<h3 class="Ldt-AnnotationsList-Tags">' + '</h3>'
     + '{{#tags.length}}'
     + '<ul class="Ldt-AnnotationsList-Tags" >'
     +   '{{#tags}}'

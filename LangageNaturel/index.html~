@@ -4,7 +4,7 @@
         <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Éléments de cryptographie - Jérémie Bourdon - 25/10/2013</title>
+        <title>Langage Naturel -  Béatrice Daille - 10/10/2013</title>
         <link href="../main.css" rel="stylesheet" type="text/css">
         <link href="../hopscotch.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="../libs/jquery-ui.css">
@@ -41,7 +41,7 @@
 
         <div class="rightside menu">
           <div class="username">
-            <input id="username" size="10" title="Cliquez ici et indiquez votre nom" onclick="this.select();" type="text" value="Anonyme"></input><img alt="" src="imagecache/cdlh.svg" width="13px" height="13px">
+            <input id="username" size="10" title="Cliquez ici et indiquez votre nom" onclick="this.select();" type="text" value="Anonyme"></input><img alt="" src="	imagecache/cdlh.svg" width="13px" height="13px">
           </div>
           <ul id="right_menu">
             <li id="help_menu"><a>?</a>
@@ -58,7 +58,7 @@
 
       <section id="content">
         <section class="column playercolumn">
-          <h1 class="coconotes"><span title="Éléments de cryptographie" class="meta-title">Éléments de cryptographie</span> - <span class="meta-author">Jérémie Bourdon</span></h1>
+          <h1 class="coconotes"><span title="Réseaux sociaux et graphes" class="meta-title">Langage naturel </span> - <span class="meta-author"> Béatrice Daille</span></h1>
           <div id="LdtPlayer"></div>
         </section>
 
@@ -70,7 +70,7 @@
               <li><a title="Questions" id="tab_quizz_toc" href="#tab-quizz">Liste quizz</a></li>
               <li><a title="Édition de quizz" id="tab_label_quizz_creation" href="#tab-quizz-edit">Édition Quizz</a></li>
               <li><a title="Notes personnelles" id="tab_label_contributions" href="#tab-contributions">Notes</a></li>
-              <li><a title="À propos de cette vidéo" id="tab_label_about" href="#tab-about">A propos</a></li>
+              <li><a title="À propos de cette vidéo" id="tab_label_about" href="#tab-about">About</a></li>
             </ul>
             <div id="tab_content">
               <div id="tab-slides" class="tab-content">
@@ -91,12 +91,12 @@
               </div>
                             <div id="tab-about" class="tab-content">
                 <div id="AboutContainer">
-                  <h3><em>Éléments de cryptographie</em> par  Jérémie Bourdon</h3>
+                  <h3><em>Langage Naturel</em> par  Béatrice Daille</h3>
                   <p class="about-license">
                     Licence: <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a></span> <a title="Réseaux sociaux et graphes de  Colin de la Higuera is licensed under a Creative Commons Attribution 4.0 International License" rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img class="licenseicon" alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
                   </p>
                   <p>Télécharger les <a download href="slides.pdf">diapositives</a></p>
-                  <p>Télécharger la <a download href="camera.mp4">vidéo</a></p>
+                  <p>Télécharger la <a download href="http://comin-ocw.org/contents/infol1/20131115/camera.mp4">vidéo</a></p>
                 </div>
               </div>
             </div>
@@ -106,16 +106,16 @@
 
       <footer>
         <div class="license">
-          <span class="licensetext"><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/MovingImage" property="dct:title" rel="dct:type">Éléments de cryptographie</span> by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName"> Jérémie Bourdon</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a></span>
+          <span class="licensetext"><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/MovingImage" property="dct:title" rel="dct:type">Langage Naturel</span> by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName"> Béatrice Daille</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a></span>
           <a title="Réseaux sociaux et graphes de  Colin de la Higuera is licensed under a Creative Commons Attribution 4.0 International License" rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img class="licenseicon" alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
         </div>
       </footer>
 <script type="text/javascript" src="../libs/jquery.min.js"></script>
 <script type="text/javascript" src="../libs/jquery-ui.min.js"></script>
 <script type="text/javascript" src="../libs/jquery.splitter.js"></script>
-<!-- <script type="text/javascript" src="../libs/jquery.ui.touch-punch.min.js"></script> -->
+<!--<script type="text/javascript" src="../libs/jquery.ui.touch-punch.min.js"></script>-->
 <script type="text/javascript" src="../metadataplayer/LdtPlayer-core.js"></script>
-<script type="text/javascript" src="../hopscotch.min.js"></script>
+<script type="text/javascript" src="hopscotch.min.js"></script>
 <script type="text/javascript">
             IriSP.libFiles.defaultDir = "../libs";
 IriSP.widgetsDir = "../widgets";
@@ -136,7 +136,7 @@ var _config = {
     widgets: [
           {
               type: "SlideVideoPlayer",
-              video: "http://comin-ocw.org/contents/infol1/20131025/camera.mp4",
+              video: "http://comin-ocw.org/contents/infol1/20131115/camera.mp4",
               width: '100%',
               url_transform: function(n) {
                   var elements = /(.+)\.(\w\w\w)$/.exec(n);
@@ -231,6 +231,7 @@ var _config = {
               show_audio: false,
               show_end_time: false,
               show_controls: false,
+              default_thumbnail: 'imagecache/cdlh.svg',
 			  is_quizz: true,
 			  show_creator: false,
               polemics: []

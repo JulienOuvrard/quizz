@@ -452,7 +452,53 @@
       },
       "id": "q9"
     },  
-           
+    {
+       "begin": 3632854,
+      "end": 3800363,
+      "tags": null,
+      "media": "m20131010",
+      "content": {
+        "mimetype": "application/x-video-quizz",
+        "data": {
+          "type": "unique_choice",
+          "question":"Les personnes qui ont confiance uniquement en Erwann ?",
+           "answers":
+           [
+             {
+               "content":  "A",
+               "feedback":"Nan"
+                 
+             },
+             {
+			   "content":"B",
+               "feedback":" Bien joué",
+             "correct": true 
+             },
+             {
+               "content":"C",
+               "feedback":"Nan"
+             },
+               {
+               "content":"D",
+               "feedback":"pas du tout"
+             }
+                
+           ]
+         },
+		 "title" : "Les personnes qui ont confiance uniquement en Erwann ?",
+		 "description" : "Les personnes qui ont confiance uniquement en Erwann ?"
+      },
+	  "type": "Quizz",
+	  "type_title":"Quizz Module",
+      "meta": {
+        "dc:contributor": "oaubert",
+        "id-ref": "Quizz",
+        "dc:created": "2013-12-19",
+        "dc:modified": "2013-12-19",
+        "dc:creator": "oaubert"
+      },
+      "id": "q10"
+    },         
     {
       "begin": 0,
       "end": 44210,
