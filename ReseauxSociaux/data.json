@@ -1,5 +1,27 @@
 {
-  "tags": [],
+  "tags": [{
+	"id": "tag_informatique",
+	"meta": {
+        	"dc:contributor": "oaubert",
+        	"dc:creator": "oaubert",
+        	"dc:title": "informatique",
+        	"dc:description": "",
+        	"dc:created": "2013-12-19",
+       	 	"dc:modified": "2013-12-19"
+      		}
+	},
+	{
+	"id": "tag_culture_generale",
+	"meta": {
+        	"dc:contributor": "oaubert",
+        	"dc:creator": "oaubert",
+        	"dc:title": "culture générale",
+        	"dc:description": "",
+        	"dc:created": "2013-12-19",
+       	 	"dc:modified": "2013-12-19"
+      		}
+	}
+  ],
   "views": [],
   "lists": [],
   "medias": [
@@ -36,7 +58,7 @@
     {
       "begin": 330489,
       "end": 338384,
-      "tags": ["informatique","culture générale"],
+      "tags": [{"id-ref":"tag_informatique"},{"id-ref":"tag_culture_generale"}],
       "media": "m20131010",
       "content": {
         "mimetype": "application/x-video-quizz",
