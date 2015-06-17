@@ -260,6 +260,7 @@ var _config = {
               show_audio: false,
               show_end_time: false,
               show_controls: false,
+              api_endpoint_template: 'http://comin-ocw.org/devpf/api/analytics/',
               polemics: []
           },
           {
@@ -359,6 +360,7 @@ var _config = {
               _myPlayer.config.username = u;
               if (_myPlayer.widgets) {
                   var wid = _myPlayer.widgets.filter(function (w) { return w.type == "CreateAnnotation"; }).map( function (w) { w.creator_name = u; });
+                  var wid2 = _myPlayer.widgets.filter(function (w) { return w.type == "Quizz"; }).map( function (w) { w.user = u; w.userid=w.generateUid();});
               }
           };
           var get_tab_index = function (id) {
