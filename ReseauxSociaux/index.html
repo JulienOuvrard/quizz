@@ -70,7 +70,7 @@
               <li><a title="Questions" id="tab_quizz_toc" href="#tab-quizz">Liste quizz</a></li>
               <li><a title="Édition de quizz" id="tab_label_quizz_creation" href="#tab-quizz-edit">Édition Quizz</a></li>
               <li><a title="Notes personnelles" id="tab_label_contributions" href="#tab-contributions">Notes</a></li>
-              <li><a title="À propos de cette vidéo" id="tab_label_about" href="#tab-about">A propos</a></li>
+              <li><a title="À propos de cette vidéo" id="tab_label_about" href="#tab-about">About</a></li>
             </ul>
             <div id="tab_content">
               <div id="tab-slides" class="tab-content">
@@ -182,7 +182,8 @@ var _config = {
             show_title_field: false,
             editable_storage: local_id,
             api_endpoint_template: 'http://comin-ocw.org/pf/api/annotation',
-            polemics: [] },
+            polemics: [] 
+           },
           { type: "MultiSegments",
             annotation_start_minimized: false,
             annotation_show_creator: false,
@@ -251,7 +252,8 @@ var _config = {
             show_title_field: false,
             editable_storage: local_id,
             api_endpoint_template: 'http://comin-ocw.org/pf/api/annotation',
-            polemics: [] },
+            polemics: [] 
+          },
           {
               type: "Quizz",
               container: "",
@@ -260,6 +262,7 @@ var _config = {
               show_audio: false,
               show_end_time: false,
               show_controls: false,
+			  api_endpoint_template: 'http://comin-ocw.org/devpf/api/analytics/',
               polemics: []
           },
           {
@@ -357,8 +360,10 @@ var _config = {
               localStorage.setItem('mla-username', u);
               // Find CreateAnnotation widget and update creator_name
               _myPlayer.config.username = u;
+
               if (_myPlayer.widgets) {
                   var wid = _myPlayer.widgets.filter(function (w) { return w.type == "CreateAnnotation"; }).map( function (w) { w.creator_name = u; });
+                  var wid2 = _myPlayer.widgets.filter(function (w) { return w.type == "Quizz"; }).map( function (w) { w.user = u; w.userid=w.generateUid();});
               }
           };
           var get_tab_index = function (id) {
@@ -432,4 +437,3 @@ var _config = {
         </script>
     </body>
 </html>
-

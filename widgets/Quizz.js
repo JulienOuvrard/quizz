@@ -8,7 +8,12 @@ IriSP.Widgets.Quizz.prototype = new IriSP.Widgets.Widget();
 
 IriSP.Widgets.Quizz.prototype.defaults = {
     annotation_type: "Quizz",
-	quizz_activated: true
+	quizz_activated: true,
+	api_serializer: "ldt_annotate",
+    api_endpoint_template: "",
+    api_method: "POST",
+    user: "",
+    userid:""
     // container: "imageContainer"
 }
 
@@ -158,7 +163,9 @@ IriSP.Widgets.Quizz.prototype.answer = function() {
 	var faux = false;
 	var i =0;
 	var _this = this;
-
+	var ans_property;
+	var ans_value;
+	
 	while (i < answers.length && faux == false) {
 		console.log("Réponse : "+ i +" => réponse : "+ $(".Ldt-Quizz-Container .Ldt-Quizz-Question-Check-" + i).is(':checked'));
 		if ( !this.question.isCorrect(i, $(".Ldt-Quizz-Container .Ldt-Quizz-Question-Check-" + i).is(':checked'))) {
@@ -166,7 +173,14 @@ IriSP.Widgets.Quizz.prototype.answer = function() {
 		}
 		i++;
 	}
-
+	var j=0;
+	while (j < answers.length){
+		if($(".Ldt-Quizz-Container .Ldt-Quizz-Question-Check-" + j).is(':checked')){
+			ans_value=j;
+		}
+		j++;
+	}
+	
 	$(".Ldt-Quizz-Score").fadeIn();
 
 	//Todo : display the result in a cool way :)
@@ -175,6 +189,7 @@ IriSP.Widgets.Quizz.prototype.answer = function() {
 		$(".Ldt-Quizz-Result").css({"background-color" : "red"});
 		$('*[data-annotation="'+ this.annotation.id +'"]').children(".Ldt-AnnotationsList-Duration").children(".Ldt-AnnotationsList-Begin").removeClass("Ldt-Quizz-Correct-Answer").addClass("Ldt-Quizz-Incorrect-Answer");
 		this.correct[this.annotation.id] = 0;
+		ans_property="wrong_answer";
 	}
 	else
 	{
@@ -182,35 +197,25 @@ IriSP.Widgets.Quizz.prototype.answer = function() {
 		$(".Ldt-Quizz-Result").css({"background-color" : "green"});
 		$('*[data-annotation="'+ this.annotation.id +'"]').children(".Ldt-AnnotationsList-Duration").children(".Ldt-AnnotationsList-Begin").removeClass("Ldt-Quizz-Incorrect-Answer").addClass("Ldt-Quizz-Correct-Answer");
 		this.correct[this.annotation.id] = 1;
+		ans_property="right_answer";
 	}
 	$(".Ldt-Quizz-Result").animate({height:"100%"},500, "linear", function(){
 		$(".Ldt-Quizz-Result").delay( 2000 ).animate({height:"0%"}, 500);
 	});
 
+	var question_number= this.annotation.number+1;
 	var correctness = this.globalScore();
 	var score = "";
 	score += '<span class="Ldt-Quizz-Correct-Answer">' + correctness[0] +'</span> / <span class="Ldt-Quizz-Incorrect-Answer">' + correctness[1] + '</span>';
-	$(".Ldt-Quizz-Index").html("Q"+ (this.annotation.number+1) + "/" + this.totalAmount);
+	$(".Ldt-Quizz-Index").html("Q"+ question_number + "/" + this.totalAmount);
 	$(".Ldt-Quizz-Score").html(score);
 
+	this.submit(this.user,this.userid,this.annotation.id,ans_property,ans_value);
+	
 	//Hide the "Validate" button and display the UI dedicated to votes
 	$(".Ldt-Quizz-Submit").fadeOut();
 	$(".Ldt-Quizz-Votes").delay(500).fadeIn();
 	
-	$(".Ldt-Quizz-Votes-Buttons input[type=\"button\"], .Ldt-Quizz-Votes-Buttons a").click({media: this.media}, function(event) {
-		//Todo : thanks people for their feedback, then close the quizz window
-		
-		//Resume the current video
-		event.data.media.play();
-
-		_this.hide();
-		$(".Ldt-Ressources-Overlay").hide();
-
-		_this.player.trigger("QuizzCreator.skip");
-
-	});
-
-	$(".Ldt-Quizz-Votes-Buttons").trigger("click", this.media);
 };
 
 IriSP.Widgets.Quizz.prototype.globalScore = function() { 
@@ -298,6 +303,43 @@ IriSP.Widgets.Quizz.prototype.draw = function() {
     $(".Ldt-Quizz-Submit input").click(function() {
 		_this.answer();
     });
+
+	//In case we click on the first "Skip" link
+	$(".quizz-submit-skip-link").click({media: this.media}, function(event) {
+		_this.submit(_this.user,_this.userid,_this.annotation.id,"skipped_answer",0);
+		_this.hide();
+		_this.player.trigger("QuizzCreator.skip");
+		event.data.media.play();
+	});
+		
+    $(".Ldt-Quizz-Votes-Buttons input[type=\"button\"], .Ldt-Quizz-Votes-Buttons a").click({media: this.media}, function(event) {
+		//Todo : thanks people for their feedback, then close the quizz window
+		
+		var vote_prop, vote_val;
+		
+		if ($(this).hasClass("Ldt-Quizz-Vote-Usefull")){
+			vote_prop = "usefull"
+			vote_val = 1;
+		}else if ($(this).hasClass("Ldt-Quizz-Vote-Useless")){
+			vote_prop = "useless";
+			vote_val = -1;
+		}else{
+			vote_prop = "skipped_vote";
+			vote_val = 0;
+		}
+		
+		_this.submit(_this.user,_this.userid,_this.annotation.id,vote_prop,vote_val);
+		
+		//Resume the current video
+		event.data.media.play();
+
+		_this.hide();
+		$(".Ldt-Ressources-Overlay").hide();
+
+		_this.player.trigger("QuizzCreator.skip");
+		
+
+	});
 
 	_this.totalAmount = _annotations.length;
 	_this.number = 0;
@@ -389,4 +431,27 @@ IriSP.Widgets.MultipleChoiceQuestion.prototype.renderFullTemplate = function(ans
 	return '<input type="checkbox" id="'+ id +'" '+ correct +' class="quizz-question Ldt-Quizz-Question-Check-'+ identifier +'" name="question['+ identifier +']" data-question="'+ identifier +'" value="' + identifier + '" /><label for="'+ id +'"></label> ';
 }
 
-
+IriSP.Widgets.Quizz.prototype.submit = function(user,user_id,question,prop,val) {
+	var _url = Mustache.to_html(this.api_endpoint_template, {id: this.source.projectId}),
+	donnees = {
+			"username": user, 
+			"useruuid": user_id,  
+			"subject": question,
+			"property": prop,
+			"value": val
+		};
+	console.log("données :"+JSON.stringify(donnees));
+	
+	IriSP.jQuery.ajax({
+            url: _url,
+            type: this.api_method,
+            contentType: 'application/json',
+            data: JSON.stringify(donnees), 
+            success: function(_data) {
+		console.log("données enregistrées avec succès " +JSON.stringify(donnees));	
+            },
+            error: function(_xhr, _error, _thrown) {
+                IriSP.log("Error when sending annotation", _thrown);
+            }
+    	});
+}
