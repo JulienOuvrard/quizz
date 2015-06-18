@@ -58,9 +58,10 @@ IriSP.Widgets.Quizz.prototype.update = function(annotation) {
 		var _this = this;
 		var question = annotation.content.data.question;
 		var answers = annotation.content.data.answers;
+		var resource = annotation.content.data.resource;
 
 		//Hide useless components
-		$(".Ldt-Ressources-Overlay").hide();
+		//$(".Ldt-Ressources-Overlay").hide();
 		$(".Ldt-Quizz-Votes").hide();
 
 		$(".Ldt-Quizz-Container .Ldt-Quizz-Title").html(question);
@@ -74,12 +75,15 @@ IriSP.Widgets.Quizz.prototype.update = function(annotation) {
 		$(".Ldt-Quizz-Index").html("Q"+ (annotation.number+1) + "/" + this.totalAmount);
 		$(".Ldt-Quizz-Score").html(score);
 		this.question = new IriSP.Widgets.UniqueChoiceQuestion(annotation);
+		this.resource = new IriSP.Widgets.UniqueChoiceQuestion(resource);
 
 		if (annotation.content.data.type == "multiple_choice") {
 			this.question = new IriSP.Widgets.MultipleChoiceQuestion(annotation);
+		this.resource = new IriSP.Widgets.MultipleChoiceQuestion(resource);
 		}
 		else if (annotation.content.data.type == "unique_choice") {
 			this.question = new IriSP.Widgets.UniqueChoiceQuestion(annotation);
+		this.resource = new IriSP.Widgets.UniqueChoiceQuestion(resource);
 		}
 
 		var output = "";
@@ -91,16 +95,15 @@ IriSP.Widgets.Quizz.prototype.update = function(annotation) {
 			output += '<div class="quizz-question-feedback '+ color +'">'+ answers[i].feedback +'</div>';
 			output += '</div>';
 
-		}
-		$(".Ldt-Quizz-Questions").html(output);
+		}	
+		
 
 		//If there is an attached resource, display it on the resources overlay
-		if (typeof this.annotation.content.data.resource != "undefined") {
-			$(".Ldt-Ressources-Overlay").html(annotation.content.data.resource);
-			$(".Ldt-Ressources-Overlay").show();
+		if ( resource != null) {
+			$(".Ldt-Quizz-Questions").html( resource + output);
 		}
-		if (this.annotation.content.data.resource == "") {
-			$(".Ldt-Ressources-Overlay").hide();
+		else {
+			$(".Ldt-Quizz-Questions").html(output);
 		}
 		$(".Ldt-Quizz-Overlay").show();
 		
