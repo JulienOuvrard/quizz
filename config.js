@@ -19,7 +19,7 @@ var take_the_tour = function () {
                         target: ".Ldt-Widget[widget-type=CreateAnnotation]",
                         placement: "top"
                     },
-                    {widgets/img/
+                    {
                         title: "Ajout de question",
                         content: '<img src="../widgets/img/quizzOn.gif" width="30px" height:"30px">'+": Quizz activé, cliquez pour le désactiver<br>"+'<img src="../widgets/img/quizzOff.gif" width="30px" height:"30px">'+": Quizz désactivé, cliquez pour l'activer<br>"+'<img src="../widgets/img/buzz.gif" width="30px" height:"30px">'+": Proposez vos propres questions, la saisie se fera dans l'onglet \"Edition Quizz\".",
                         target: ".Ldt-Ctrl-Quizz-Enable",
