@@ -423,18 +423,18 @@ IriSP.Widgets.MultipleChoiceQuestion.prototype.isCorrect = function(answer, vali
 }
 
 IriSP.Widgets.MultipleChoiceQuestion.prototype.renderQuizzTemplate = function(answer, identifier) {
-	return '<input type="checkbox" class="quizz-question Ldt-Quizz-Question-Check-'+ identifier +'" name="question['+ identifier +']" data-question="'+ identifier +'" value="' + identifier + '" /> ';
+	return '<input type="checkbox" class="quizz-question-edition Ldt-Quizz-Question-Check-'+ identifier +'" name="question['+ identifier +']" data-question="'+ identifier +'" value="' + identifier + '" /> ';
 }
 
 IriSP.Widgets.MultipleChoiceQuestion.prototype.renderTemplate = function(answer, identifier) {
 	var id = this.generateUid();
-	return '<input type="checkbox" id="'+ id +'" class="quizz-question Ldt-Quizz-Question-Check-'+ identifier +'" name="question['+ identifier +']" data-question="'+ identifier +'" value="' + identifier + '" /><label for="'+ id +'"></label>';
+	return '<input type="checkbox" id="'+ id +'" class="quizz-question-edition Ldt-Quizz-Question-Check-'+ identifier +'" name="question['+ identifier +']" data-question="'+ identifier +'" value="' + identifier + '" /><label for="'+ id +'"></label>';
 }
 
 IriSP.Widgets.MultipleChoiceQuestion.prototype.renderFullTemplate = function(answer, identifier) {
 	var correct = (answer.correct == true) ? "checked=\"checked\"" : "";
 	var id = this.generateUid();
-	return '<input type="checkbox" id="'+ id +'" '+ correct +' class="quizz-question Ldt-Quizz-Question-Check-'+ identifier +'" name="question['+ identifier +']" data-question="'+ identifier +'" value="' + identifier + '" /><label for="'+ id +'"></label> ';
+	return '<input type="checkbox" id="'+ id +'" '+ correct +' class="quizz-question-edition Ldt-Quizz-Question-Check-'+ identifier +'" name="question['+ identifier +']" data-question="'+ identifier +'" value="' + identifier + '" /><label for="'+ id +'"></label> ';
 }
 
 IriSP.Widgets.Quizz.prototype.submit = function(user,user_id,question,prop,val) {
