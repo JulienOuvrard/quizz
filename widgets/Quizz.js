@@ -330,7 +330,7 @@ IriSP.Widgets.Quizz.prototype.draw = function() {
 			vote_prop = "useless";
 			vote_val = -1;
 			
-			$(".Ldt-Ctrl-Quizz-Create-Button").addClass("button_highlight").delay(5000).queue(function(){
+			$(".Ldt-Ctrl-Quizz-Create").addClass("button_highlight").delay(5000).queue(function(){
                 $(this).removeClass("button_highlight").dequeue();
             });
             
