@@ -21,8 +21,8 @@ var take_the_tour = function () {
                     },
                     {
                         title: "Ajout de question",
-                        content: "Proposez vos propres questions, la saisie se fera dans l'onglet \"Edition Quizz\".",
-                        target: ".Ldt-Ctrl-Quizz-Create",
+                        content: '<img src="../quizzOn.gif" width="30px" height:"30px">'+": Quizz activé, cliquez pour le désactiver<br>"+'<img src="../quizzOff.gif" width="30px" height:"30px">'+": Quizz désactivé, cliquez pour l'activer<br>"+'<img src="../buzz.gif" width="30px" height:"30px">'+": Proposez vos propres questions, la saisie se fera dans l'onglet \"Edition Quizz\".",
+                        target: ".Ldt-Ctrl-Quizz-Enable",
                         placement: "top"
                     },
                     {

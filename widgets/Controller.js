@@ -1,4 +1,6 @@
-/* Displays Play and Pause buttons, Search Button and Form, Volume Control */
+
+
+    /* Displays Play and Pause buttons, Search Button and Form, Volume Control */
 
 IriSP.Widgets.Controller = function(player, config) {
     IriSP.Widgets.Widget.call(this, player, config);
@@ -33,10 +35,10 @@ IriSP.Widgets.Controller.prototype.template =
     + '<input placeholder="{{ l10n.search }}" type="search" class="Ldt-Ctrl-SearchInput Ldt-TraceMe"></input>'
     + '</div>'
     + '<div style="float:left;" class="Ldt-Ctrl-Quizz-Enable Ldt-TraceMe">'
-    + '<button class="Ldt-Ctrl-Quizz-Enable-Button">Quizz</button>'
+    + '<button class="Ldt-Ctrl-Quizz-Enable-Button" style="width:22px;height:22px; margin: 0 18px 0;"></button>'
     + '</div>'
     + '<div style="float:left;" class="Ldt-Ctrl-Quizz-Create Ldt-TraceMe">'
-    + '<button class="Ldt-Ctrl-Quizz-Create-Button">Ajouter question</button>'
+    + '<button class="Ldt-Ctrl-Quizz-Create-Button"><img src="../widgets/img/buzz.gif" width="20px" height:"20px"></button>'
     + '</div>'
     + '</div>'
     + '<div class="Ldt-Ctrl-Right">'
@@ -110,14 +112,21 @@ IriSP.Widgets.Controller.prototype.draw = function() {
     this.$playButton.click(this.functionWrapper("playHandler"));
     
 	if (this.enable_quizz_toggle) {
-		$(".Ldt-Ctrl-Quizz-Enable-Button").css( "color", "green" );
+		$(".Ldt-Ctrl-Quizz-Enable-Button").css( "background", "url(../widgets/img/quizzOn.gif)");
+		$(".Ldt-Ctrl-Quizz-Enable-Button").css("background-size", "22px 22px")
+		$(".Ldt-Ctrl-Quizz-Enable-Button").css("background-repeat", "no-repeat")
+		$(".Ldt-Ctrl-Quizz-Enable-Button").css("background-position", "center" );
 		this.player.trigger("QuizzCreator.show");
 		$("#QuizzEditContainer").show();
 	}
 	else
 	{
-		$(".Ldt-Ctrl-Quizz-Enable-Button").css( "color", "lightgrey" );
+		$(".Ldt-Ctrl-Quizz-Enable-Button").css( "background", "url(../widgets/img/quizzOff.gif)");
+		$(".Ldt-Ctrl-Quizz-Enable-Button").css("background-size", "22px 22px")
+		$(".Ldt-Ctrl-Quizz-Enable-Button").css("background-repeat", "no-repeat")
+		$(".Ldt-Ctrl-Quizz-Enable-Button").css("background-position", "center" );
 		this.player.trigger("QuizzCreator.hide");
+		$("#QuizzEditContainer").show();
 	}
 
     this.$.find(".Ldt-Ctrl-Annotate").click(function() {
@@ -242,7 +251,10 @@ IriSP.Widgets.Controller.prototype.createQuizz = function() {
 IriSP.Widgets.Controller.prototype.toggleQuizz = function() {
 	this.enable_quizz_toggle = !this.enable_quizz_toggle;
 	if (this.enable_quizz_toggle) {    
-		$(".Ldt-Ctrl-Quizz-Enable-Button").css( "color", "green" );
+		$(".Ldt-Ctrl-Quizz-Enable-Button").css( "background", "url(../widgets/img/quizzOn.gif)");
+		$(".Ldt-Ctrl-Quizz-Enable-Button").css("background-size", "20px 22px")
+		$(".Ldt-Ctrl-Quizz-Enable-Button").css("background-repeat", "no-repeat")
+		$(".Ldt-Ctrl-Quizz-Enable-Button").css("background-position", "center" );
 		$(".Ldt-Ctrl-Quizz-Create").show();
 		this.player.trigger("Quizz.activate");
 		this.player.trigger("QuizzCreator.show");
@@ -250,7 +262,10 @@ IriSP.Widgets.Controller.prototype.toggleQuizz = function() {
 	}
 	else
 	{
-		$(".Ldt-Ctrl-Quizz-Enable-Button").css( "color", "lightgrey" );
+		$(".Ldt-Ctrl-Quizz-Enable-Button").css( "background", "url(../widgets/img/quizzOff.gif)");
+		$(".Ldt-Ctrl-Quizz-Enable-Button").css("background-size", "20px 22px")
+		$(".Ldt-Ctrl-Quizz-Enable-Button").css("background-repeat", "no-repeat")
+		$(".Ldt-Ctrl-Quizz-Enable-Button").css("background-position", "center" );
 		$(".Ldt-Ctrl-Quizz-Create").hide();
 	    this.player.trigger("Quizz.deactivate");
 		this.player.trigger("QuizzCreator.hide");
