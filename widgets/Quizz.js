@@ -451,7 +451,6 @@ IriSP.Widgets.Quizz.prototype.submit = function(user,user_id,question,prop,val) 
 			"property": prop,
 			"value": val
 		};
-	console.log("données :"+JSON.stringify(donnees));
 	
 	IriSP.jQuery.ajax({
             url: _url,
