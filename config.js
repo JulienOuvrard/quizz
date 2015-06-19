@@ -20,14 +20,14 @@ var take_the_tour = function () {
                         placement: "top"
                     },
                     {
-                        title: "Notes - onglet",
-                        content: "Vos notes personnelles seront présentées dans cette colonne à droite de la vidéo. Elles sont pour l'instant sauvegardées uniquement dans la mémoire de votre navigateur.",
-                        target: "#tab",
-                        placement: "left"
+                        title: "Ajout de question",
+                        content: "Proposez vos propres questions, la saisie se fera dans l'onglet \"Edition Quizz\".",
+                        target: ".Ldt-Ctrl-Quizz-Create",
+                        placement: "top"
                     },
                     {
-                        title: "Edition Quizz - onglet",
-                        content: "Proposez vos propres questions, ou proposez une modfication d'une question déjà existante.",
+                        title: "Notes - onglet",
+                        content: "Vos notes personnelles seront présentées dans cette colonne à droite de la vidéo. Elles sont pour l'instant sauvegardées uniquement dans la mémoire de votre navigateur.",
                         target: "#tab",
                         placement: "left"
                     },

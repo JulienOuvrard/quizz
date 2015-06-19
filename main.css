@@ -541,3 +541,45 @@ div.hopscotch-bubble {
     }
 }
 
+@-webkit-keyframes pulse {
+  25% {
+    -webkit-transform: scale(1.02);
+    transform: scale(1.02);
+  }
+  75% {
+    -webkit-transform: scale(0.98);
+    transform: scale(0.98);
+  }
+}
+
+@keyframes pulse {
+  25% {
+    -webkit-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+    transform: scale(1.02);
+  }
+  75% {
+    -webkit-transform: scale(0.98);
+    -ms-transform: scale(0.98);
+    transform: scale(0.98);
+  }
+}
+
+.Ldt-Ctrl-Quizz-Create{
+-webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+.button_highlight{
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  color:red;
+}
+
