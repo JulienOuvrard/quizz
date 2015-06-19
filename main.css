@@ -541,45 +541,32 @@ div.hopscotch-bubble {
     }
 }
 
-@-webkit-keyframes pulse {
-  25% {
-    -webkit-transform: scale(1.02);
-    transform: scale(1.02);
-  }
-  75% {
-    -webkit-transform: scale(0.98);
-    transform: scale(0.98);
-  }
+.button_highlight::before {
+  background: #111;
+  background: rgba(0,0,0,.8);
+  border-radius: .5em;
+  bottom: 1.35em;
+  color: #fff;
+  display: block;
+  bottom: 2.8em;
+  padding: .3em 1em;
+  position: absolute;
+  text-shadow: 0 1px 0 #000;
+  white-space: nowrap;
+  z-index: 98;
+  content: "Avez vous mieux à proposer ?";
 }
 
-@keyframes pulse {
-  25% {
-    -webkit-transform: scale(1.02);
-    -ms-transform: scale(1.02);
-    transform: scale(1.02);
-  }
-  75% {
-    -webkit-transform: scale(0.98);
-    -ms-transform: scale(0.98);
-    transform: scale(0.98);
-  }
-}
-
-.Ldt-Ctrl-Quizz-Create{
--webkit-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  transform: translateZ(0);
-}
-
-.button_highlight{
-  -webkit-animation-name: pulse;
-  animation-name: pulse;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-timing-function: linear;
-  animation-timing-function: linear;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-  color:red;
+.button_highlight::after {
+  border: solid;
+  border-color: #111 transparent;
+  border-color: rgba(0,0,0,.8) transparent;
+  border-width: .4em .4em 0 .4em;
+  top: -0.3em;
+  content: "";
+  display: block;
+  left: 40em;
+  position: absolute;
+  z-index: 99;
 }
 
