@@ -28,6 +28,7 @@
 }
 
 .Ldt-Ctrl-Play {
+margin:100px 0;
   margin: 0 15px;
 }
 
@@ -179,14 +180,17 @@ input.Ldt-Ctrl-SearchInput {
 /* quizz */
 
 .Ldt-Ctrl-Quizz-Create {
-	width:120px;
+	width:50px;
 }
 
 .Ldt-Ctrl-Quizz-Enable {
-	width:80px;
+	width:40px;
+	height: 20px;
 }
 
-.Ldt-Ctrl-Quizz-Enable button, Ldt-Ctrl-Quizz-Create button {
+.Ldt-Ctrl-Quizz-Enable button, .Ldt-Ctrl-Quizz-Create button, .Ldt-Ctrl-Quizz-Disactivated button {
 	width: 100%;
+	border:none;
+	background: transparent;
 }
 
