@@ -26,14 +26,14 @@ IriSP.Widgets.Quizz.prototype.template = '<div class="Ldt-Quizz-Container">'
 										+ '		<div class="Ldt-Quizz-Result">Bonne réponse</div>'
 										+ '		<div class="Ldt-Quizz-Submit">'
 										+ '			<div class="quizz-submit-button"><input type="button" value="Valider" /></div>'
-										+ '			<div class="quizz-submit-skip-link"><a href="#">Skip</a></div><div style="clear:both;"></div>'
+										+ '			<div class="quizz-submit-skip-link"><a href="#">Passer</a></div><div style="clear:both;"></div>'
 										+ '		</div>'
 										+ '		<div class="Ldt-Quizz-Votes">'
 										+ '			<h1>Avez-vous trouvé cette question utile ?</h1>'
 										+ '			<div class="Ldt-Quizz-Votes-Buttons">'
 										+ '				<div><input type="button" value="Non" class="Ldt-Quizz-Vote-Useless" /></div>'
 										+ '				<div><input type="button" value="Oui" class="Ldt-Quizz-Vote-Usefull" /></div>'
-										+ '				<div class="Ldt-Quizz-Vote-Skip-Block"><a href="#" class="Ldt-Quizz-Vote-Skip">Skip</a></div>'
+										+ '				<div class="Ldt-Quizz-Vote-Skip-Block"><a href="#" class="Ldt-Quizz-Vote-Skip">Passer</a></div>'
 										+ ' 		</div>'
 										+ '		</div>'
 										+ '	</div>'
@@ -329,6 +329,11 @@ IriSP.Widgets.Quizz.prototype.draw = function() {
 		}else if ($(this).hasClass("Ldt-Quizz-Vote-Useless")){
 			vote_prop = "useless";
 			vote_val = -1;
+			
+			$(".Ldt-Ctrl-Quizz-Create-Button").addClass("button_highlight").delay(5000).queue(function(){
+                $(this).removeClass("button_highlight").dequeue();
+            });
+            
 		}else{
 			vote_prop = "skipped_vote";
 			vote_val = 0;
