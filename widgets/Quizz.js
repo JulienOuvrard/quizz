@@ -96,11 +96,14 @@ IriSP.Widgets.Quizz.prototype.update = function(annotation) {
 			output += '</div>';
 
 		}	
+			picture = '<div class="quizz-resource-block" id="resource"><p>'+resource+'</p></div>';
 		
+		QR='<div class="quizz-resource-block" id="resource" ><p>'+resource+'</p></div>';
+		QR += output;
 
 		//If there is an attached resource, display it on the resources overlay
 		if ( resource != null) {
-			$(".Ldt-Quizz-Questions").html( resource + output);
+			$(".Ldt-Quizz-Questions").html( QR);
 		}
 		else {
 			$(".Ldt-Quizz-Questions").html(output);

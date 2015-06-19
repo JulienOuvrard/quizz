@@ -44,6 +44,10 @@
 .quizz-question-block {
         padding-top:10px;
 }
+.quizz-resource-block {
+        padding-top:10px;
+        float : left;
+}
 
 .quizz-question-feedback {
         display:none;
@@ -138,7 +142,7 @@
         top:0px;
         background-color:white;
     	z-index:1;
-        width:622px;
+        width:100%;
         height:100%;
 }
 
