@@ -26,7 +26,6 @@
 
 .Ldt-QuizzCreator-Questions-Answer div {
 	display:inline-block;
-	height:100%;
 	vertical-align:middle;
 }
 
@@ -59,8 +58,8 @@
 }
 
 .Ldt-QuizzCreator-Remove {
-	width: 16px;
-	height: 16px;
+	width: 15px;
+	height: 15px;
     	margin-left: 8px;
 	cursor:pointer;
     	background: url(img/delete.png);
