@@ -42,11 +42,11 @@
 }
 
 .quizz-question-block {
-        padding-top:10px;
+        padding-top:10px;      
 }
 .quizz-resource-block {
         padding-top:10px;
-        float : left;
+        float : right;
 }
 
 .quizz-question-feedback {
