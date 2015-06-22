@@ -96,7 +96,7 @@ var take_the_tour = function () {
 
               if (_myPlayer.widgets) {
                   var wid = _myPlayer.widgets.filter(function (w) { return w.type == "CreateAnnotation"; }).map( function (w) { w.creator_name = u; });
-                  var wid2 = _myPlayer.widgets.filter(function (w) { return w.type == "Quizz"; }).map( function (w) { w.user = u; w.userid=user_uuid;});
+                  var wid2 = _myPlayer.widgets.filter(function (w) { return w.type == "Quizz"; }).map( function (w) { w.user = u; w.userid=user_uuid; w.creator_name = u;});
               }
           };
           var get_tab_index = function (id) {
