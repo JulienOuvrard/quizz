@@ -187,6 +187,9 @@ input.Ldt-Ctrl-SearchInput {
 	width:40px;
 	height: 20px;
 }
+.Ldt-Ctrl-Quizz-Enable-Button: hover{
+background-color: red;
+}
 
 .Ldt-Ctrl-Quizz-Enable button, .Ldt-Ctrl-Quizz-Create button, .Ldt-Ctrl-Quizz-Disactivated button {
 	width: 100%;
