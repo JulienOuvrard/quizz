@@ -64,7 +64,7 @@ var _config = {
             show_creator_field: false,
             show_title_field: false,
             editable_storage: local_id,
-            api_endpoint_template: 'http://comin-ocw.org/pf/api/annotation',
+            api_endpoint_template: 'http://comin-ocw.org/devpf/api/annotation/',
             polemics: [] 
            },
           { type: "MultiSegments",
@@ -134,7 +134,7 @@ var _config = {
             show_creator_field: false,
             show_title_field: false,
             editable_storage: local_id,
-            api_endpoint_template: 'http://comin-ocw.org/pf/api/annotation',
+            api_endpoint_template: 'http://comin-ocw.org/devpf/api/annotation/',
             polemics: [] 
           },
           {
