@@ -400,7 +400,7 @@ IriSP.Widgets.UniqueChoiceQuestion.prototype.renderQuizzTemplate = function(answ
 
 IriSP.Widgets.UniqueChoiceQuestion.prototype.renderTemplate = function(answer, identifier) {
 	var id = this.generateUid();
-	return '<input type="radio" id="'+ id +'" class="quizz-question-edition Ldt-Quizz-Question-Check-'+ identifier +'" name="question" data-question="'+ identifier +'" value="' + identifier + '" /><label for="'+ id +'"></label>';
+	return '<input type="radio" id="'+ id +'" class="quizz-question-edition Ldt-Quizz-Question-Check-'+ identifier +'" name="question" data-question="'+ identifier +'" value="' + identifier + '" /><label for="'+ id +'" title="Veuillez sélectionner la réponse correcte"></label>';
 }
 
 IriSP.Widgets.UniqueChoiceQuestion.prototype.renderFullTemplate = function(answer, identifier) {
@@ -433,7 +433,7 @@ IriSP.Widgets.MultipleChoiceQuestion.prototype.renderQuizzTemplate = function(an
 
 IriSP.Widgets.MultipleChoiceQuestion.prototype.renderTemplate = function(answer, identifier) {
 	var id = this.generateUid();
-	return '<input type="checkbox" id="'+ id +'" class="quizz-question-edition Ldt-Quizz-Question-Check-'+ identifier +'" name="question['+ identifier +']" data-question="'+ identifier +'" value="' + identifier + '" /><label for="'+ id +'"></label>';
+	return '<input type="checkbox" id="'+ id +'" class="quizz-question-edition Ldt-Quizz-Question-Check-'+ identifier +'" name="question['+ identifier +']" data-question="'+ identifier +'" value="' + identifier + '" /><label for="'+ id +'" title="Veuillez sélectionner la ou les réponses correctes"></label>';
 }
 
 IriSP.Widgets.MultipleChoiceQuestion.prototype.renderFullTemplate = function(answer, identifier) {
