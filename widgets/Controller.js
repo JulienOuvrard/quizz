@@ -35,7 +35,7 @@ IriSP.Widgets.Controller.prototype.template =
     + '<input placeholder="{{ l10n.search }}" type="search" class="Ldt-Ctrl-SearchInput Ldt-TraceMe"></input>'
     + '</div>'
     + '<div style="float:left;" class="Ldt-Ctrl-Quizz-Enable Ldt-TraceMe">'
-    + '<button class="Ldt-Ctrl-Quizz-Enable-Button" style="width:22px;height:22px; margin: 0 18px 0;" title="Activer/Desactiver le quizz"></button>'
+    + '<button class="Ldt-Ctrl-Quizz-Enable-Button" style="width:22px;height:22px; margin: 0 18px 0;" title="Activer/Désactiver le quizz"></button>'
     + '</div>'
     + '<div style="float:left;" class="Ldt-Ctrl-Quizz-Create Ldt-TraceMe">'
     + '<button class="Ldt-Ctrl-Quizz-Create-Button" ><img src="../widgets/img/buzz.gif" title="Ajouter une réponse" width="20px" height:"20px"></button>'
@@ -231,6 +231,7 @@ IriSP.Widgets.Controller.prototype.playButtonUpdater = function() {
             .attr("title", this.l10n.play)
             .removeClass("Ldt-Ctrl-Play-PauseState")
             .addClass("Ldt-Ctrl-Play-PlayState");
+            
     } else {
         this.$playButton
             .attr("title", this.l10n.pause)
