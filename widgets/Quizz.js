@@ -297,7 +297,6 @@ IriSP.Widgets.Quizz.prototype.draw = function() {
 		console.log("[Quizz] refreshed");
 		_this.refresh();
     });
-
 	_this.container = $("<div class='Ldt-Quizz-Overlay right_panel'></div>").prependTo($("[widget-type*=Player]"));
 	_this.ressourcesContainer = $("<div class='Ldt-Ressources-Overlay left_panel'></div>").prependTo($("[widget-type*=Player]"));
 	_this.container.html(this.template);
