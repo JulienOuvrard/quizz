@@ -296,7 +296,17 @@ IriSP.Widgets.Quizz.prototype.draw = function() {
     this.onMdpEvent("Quizz.refresh", function() {
 		console.log("[Quizz] refreshed");
 		_this.refresh();
+    });  
+    
+    this.onMdpEvent("media.getPaused", function() {
+		console.log("Posez votre question");
+		_this.pause();
     });
+      this.onMdpEvent("Playable.prototype.getPaused", function() {
+		console.log("C'est quoi ta question ????");
+		_this.paused();
+    });
+
 
 	_this.container = $("<div class='Ldt-Quizz-Overlay right_panel'></div>").prependTo($("[widget-type*=Player]"));
 	_this.ressourcesContainer = $("<div class='Ldt-Ressources-Overlay left_panel'></div>").prependTo($("[widget-type*=Player]"));
