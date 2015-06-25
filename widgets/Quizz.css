@@ -147,11 +147,13 @@
 }
 
 .Ldt-Ressources-Overlay {
-		display:none;
-        text-align:center;
-        z-index:1;
-        background-color:white;
-        width:622px;
+  	position: absolute;
+  	margin-left: 80%;
+  	margin-top: -8.5%;	
+  	height: 106px;
+  	width: 121px;
+	background-color: transparent;
+	z-index:1;
 }
 
 .Ldt-Quizz-Result {

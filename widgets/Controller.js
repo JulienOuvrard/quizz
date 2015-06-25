@@ -38,7 +38,7 @@ IriSP.Widgets.Controller.prototype.template =
     + '<button class="Ldt-Ctrl-Quizz-Enable-Button" style="width:30px;height:30px; margin: -3px 10px 0;" title="Activer/Désactiver le quizz"></button>'
     + '</div>'
     + '<div style="float:left;" class="Ldt-Ctrl-Quizz-Create Ldt-TraceMe">'
-    + '<button class="Ldt-Ctrl-Quizz-Create-Button" ><img src="../widgets/img/buzz.svg" title="Ajouter une réponse" style="width:30px;height:30px; margin: -5px 10px 0;"></button>'
+    + '<button class="Ldt-Ctrl-Quizz-Create-Button" ><img src="../widgets/img/buzz.svg" title="Ajouter une question" style="width:30px;height:30px; margin: -5px 10px 0;"></button>'
     + '</div>'
     + '</div>'
     + '<div class="Ldt-Ctrl-Right">'
