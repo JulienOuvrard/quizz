@@ -314,7 +314,7 @@ IriSP.Widgets.Quizz.prototype.draw = function() {
 	$(".Ldt-Ressources-Overlay").html(circle).hide(0);
     });
   
-	_this.PauseAddQuestion = $("<div class='Ldt-Ressources-Overlay left_panel'></div>").prependTo($("[widget-type*=Player]"));
+	_this.PauseAddQuestion = $("<div class='Ldt-Ressources-Overlay'></div>").prependTo($("[widget-type*=Player]"));
 	_this.container = $("<div class='Ldt-Quizz-Overlay right_panel'></div>").prependTo($("[widget-type*=Player]"));
 	_this.container.html(this.template);
 	
