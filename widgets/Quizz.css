@@ -148,12 +148,12 @@
 
 .Ldt-Ressources-Overlay {
   	position: absolute;
-  	margin-left: 80%;
-  	margin-top: -8.5%;	
+  	bottom: 100px;
   	height: 106px;
   	width: 121px;
 	background-color: transparent;
 	z-index:1;
+	right: 20px;
 }
 
 .Ldt-Quizz-Result {
