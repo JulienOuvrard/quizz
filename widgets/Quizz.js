@@ -42,26 +42,26 @@ IriSP.Widgets.Quizz.prototype.template = '<div class="Ldt-Quizz-Container">'
 IriSP.Widgets.Quizz.prototype.annotationTemplate = '';
 
 IriSP.Widgets.Quizz.prototype.update = function(annotation) {
-
+	var _this = this;
 	if (this.quizz_activated &&
 		this.correct[annotation.id] != 1 &&
 		this.correct[annotation.id] != 0) {
 
 		console.log("new annotation : ");
-		console.log(annotation);
-
+		console.log(annotation);		
+		_this.quizz_displayed = true;
 		//Pause the current video
 		this.media.pause();
 
 		this.annotation = annotation;
 
-		var _this = this;
+		
 		var question = annotation.content.data.question;
 		var answers = annotation.content.data.answers;
 		var resource = annotation.content.data.resource;
 
 		//Hide useless components
-		//$(".Ldt-Ressources-Overlay").hide();
+		//$(".Ldt-Pause-Add-Question").hide();
 		$(".Ldt-Quizz-Votes").hide();
 
 		$(".Ldt-Quizz-Container .Ldt-Quizz-Title").html(question);
@@ -154,7 +154,10 @@ IriSP.Widgets.Quizz.prototype.update = function(annotation) {
 IriSP.Widgets.Quizz.prototype.hide = function() {
 	$(".Ldt-Quizz-Votes").fadeOut();
 	$(".Ldt-Quizz-Overlay").hide();
-	$(".Ldt-Ressources-Overlay").hide();
+	$(".Ldt-Pause-Add-Question").hide();
+	var _this = this;
+	
+	_this.quizz_displayed = false;
 }
 
 IriSP.Widgets.Quizz.prototype.answer = function() { 
@@ -171,7 +174,6 @@ IriSP.Widgets.Quizz.prototype.answer = function() {
 	var _this = this;
 	var ans_property;
 	var ans_value;
-	
 	while (i < answers.length && faux == false) {
 		console.log("Réponse : "+ i +" => réponse : "+ $(".Ldt-Quizz-Container .Ldt-Quizz-Question-Check-" + i).is(':checked'));
 		if ( !this.question.isCorrect(i, $(".Ldt-Quizz-Container .Ldt-Quizz-Question-Check-" + i).is(':checked'))) {
@@ -266,15 +268,16 @@ IriSP.Widgets.Quizz.prototype.refresh = function() {
 }
 
 IriSP.Widgets.Quizz.prototype.draw = function() {   
-
+	var _this = this;
     var _annotations = this.getWidgetAnnotations().sortBy(function(_annotation) {
         return _annotation.begin;
     });
 	
 	console.log(_annotations.length + " Quizz annotations ");
-
-    var _this = this;
-
+	
+	_this.quizz_displayed = false;
+    
+	
     this.onMdpEvent("Quizz.activate", function() {
 		_this.quizz_activated = true;
 		$("#tab_quizz_toc").show();
@@ -299,22 +302,21 @@ IriSP.Widgets.Quizz.prototype.draw = function() {
     }); 
 
 
-	var circle = '<svg height="100" width="100"><img id="AddQuestion" src="../widgets/img/addQuestion.svg"/></svg>';
+	var circle = '<svg height="100" width="100"><img id="PAQ" src="../widgets/img/addQuestion.svg"/></svg>';
 		
     this.onMediaEvent("pause", function() {
+		if(_this.quizz_displayed){
+	$(".Ldt-Pause-Add-Question").html(circle).hide();}
+		else{$(".Ldt-Pause-Add-Question").html(circle).show();}
 		
-	$(".Ldt-Ressources-Overlay").html(circle).show(1);
-	document.getElementById( "AddQuestion" ).onclick = function() {
-		console.log("Circle clicked");
-   _this.create_quizz_callback();	   
-   };
+	document.getElementById( "PAQ" ).onclick = function() {_this.create_quizz_callback();};
     });
     
     this.onMediaEvent("play", function() {
-	$(".Ldt-Ressources-Overlay").html(circle).hide(0);
+	$(".Ldt-Pause-Add-Question").html(circle).hide();
     });
   
-	_this.PauseAddQuestion = $("<div class='Ldt-Ressources-Overlay'></div>").prependTo($("[widget-type*=Player]"));
+	_this.PauseAddQuestion = $("<div class='Ldt-Pause-Add-Question'></div>").prependTo($("[widget-type*=Player]"));
 	_this.container = $("<div class='Ldt-Quizz-Overlay right_panel'></div>").prependTo($("[widget-type*=Player]"));
 	_this.container.html(this.template);
 	
@@ -362,7 +364,7 @@ IriSP.Widgets.Quizz.prototype.draw = function() {
 		event.data.media.play();
 
 		_this.hide();
-		$(".Ldt-Ressources-Overlay").hide();
+		$(".Ldt-Pause-Add-Question").hide();
 
 		_this.player.trigger("QuizzCreator.skip");
 		
