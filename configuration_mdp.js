@@ -146,7 +146,12 @@ var _config = {
               show_end_time: false,
               show_controls: false,
 			  api_endpoint_template: 'http://comin-ocw.org/devpf/api/analytics/',
-              polemics: []
+              polemics: [],
+              create_quizz_callback: function () {
+                console.log("Quizz callback");
+                $("#QuizzEditContainer").show();
+                _tabs.tabs("option", "active", get_tab_index('#tab-quizz-edit'));
+            },
           },
           {
               type: "NoteTaking",

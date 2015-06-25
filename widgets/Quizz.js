@@ -85,7 +85,7 @@ IriSP.Widgets.Quizz.prototype.update = function(annotation) {
 			this.question = new IriSP.Widgets.UniqueChoiceQuestion(annotation);
 		this.resource = new IriSP.Widgets.UniqueChoiceQuestion(resource);
 		}
-
+		
 		var output = "";
 		for (i = 0; i < answers.length; i++) {
 			//alert( answers[i].content);
@@ -96,11 +96,11 @@ IriSP.Widgets.Quizz.prototype.update = function(annotation) {
 			output += '</div>';
 
 		}	
-			picture = '<div class="quizz-resource-block" id="resource"><p>'+resource+'</p></div>';
 		
-		QR='<div class="quizz-resource-block" id="resource" ><p>'+resource+'</p></div>';
+		
+		QR='<div class="quizz-resource-block" id="resource" ><p>'+resource+'</p></div>';		
 		QR += output;
-
+		
 		//If there is an attached resource, display it on the resources overlay
 		if ( resource != null) {
 			$(".Ldt-Quizz-Questions").html( QR);
@@ -295,11 +295,29 @@ IriSP.Widgets.Quizz.prototype.draw = function() {
 
     this.onMdpEvent("Quizz.refresh", function() {
 		console.log("[Quizz] refreshed");
-		_this.refresh();
+		_this.refresh();		
+    }); 
+
+
+	var circle = '<svg height="100" width="100"><img id="AddQuestion" src="../widgets/img/addQuestion.svg"/></svg>';
+		
+    this.onMediaEvent("pause", function() {
+		
+	$(".Ldt-Ressources-Overlay").html(circle).show(1);
+	document.getElementById( "AddQuestion" ).onclick = function() {
+		console.log("Circle clicked");
+   _this.create_quizz_callback();	   
+   };
     });
+    
+    this.onMediaEvent("play", function() {
+	$(".Ldt-Ressources-Overlay").html(circle).hide(0);
+    });
+  
+	_this.PauseAddQuestion = $("<div class='Ldt-Ressources-Overlay left_panel'></div>").prependTo($("[widget-type*=Player]"));
 	_this.container = $("<div class='Ldt-Quizz-Overlay right_panel'></div>").prependTo($("[widget-type*=Player]"));
-	_this.ressourcesContainer = $("<div class='Ldt-Ressources-Overlay left_panel'></div>").prependTo($("[widget-type*=Player]"));
 	_this.container.html(this.template);
+	
 
 	$(".Ldt-Quizz-Overlay").hide();
 
