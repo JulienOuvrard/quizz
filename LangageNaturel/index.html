@@ -8,7 +8,7 @@
         <link href="../main.css" rel="stylesheet" type="text/css">
         <link href="../hopscotch.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="../libs/jquery-ui.css">
-        <link rel="stylesheet" href="../libs/jquery.splitter.css">
+        <link rel="stylesheet" href="../libs/jquery.touchsplitter.css">
   </head>
 
     <body>
@@ -56,11 +56,14 @@
 
       </header>
 
-      <section id="content">
-        <section class="column playercolumn">
-          <h1 class="coconotes"><span title="Réseaux sociaux et graphes" class="meta-title">Langage naturel </span> - <span class="meta-author"> Béatrice Daille</span></h1>
-          <div id="LdtPlayer"></div>
-        </section>
+       <section id="content">
+        <div class="column playercolumn">
+			<h1 class="coconotes"><span title="Langage naturel" class="meta-title">Langage naturel </span> - <span class="meta-author"> Béatrice Daille</span></h1>
+			<div id="PlayerContainer">
+              <div id="ControlledVideoPlayer"></div>
+              <div id="LdtPlayer"></div>
+          </div>
+        </div>   
 
         <section class="column tabcolumn">
           <div id="tab">
@@ -112,8 +115,8 @@
       </footer>
 <script type="text/javascript" src="../libs/jquery.min.js"></script>
 <script type="text/javascript" src="../libs/jquery-ui.min.js"></script>
-<script type="text/javascript" src="../libs/jquery.splitter.js"></script>
-<!--<script type="text/javascript" src="../libs/jquery.ui.touch-punch.min.js"></script>-->
+<script type="text/javascript" src="../libs/jquery.touchsplitter.js"></script>
+<script type="text/javascript" src="../libs/jquery.ui.touch-punch.min.js"></script>
 <script type="text/javascript" src="../metadataplayer/LdtPlayer-core.js"></script>
 <script type="text/javascript" src="../hopscotch.min.js"></script>
 <script type="text/javascript" src="../configuration_mdp.js"></script>
@@ -124,4 +127,3 @@
 <script type="text/javascript" src="../config.js" ></script>
     </body>
 </html>
-
