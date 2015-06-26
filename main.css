@@ -98,6 +98,7 @@ h2 {
 .playercolumn {
     width: 75%;
     width: calc(75% - 16px);
+    overflow:hidden;
     overflow-x: hidden !important;
 }
 .tabcolumn {
@@ -116,7 +117,7 @@ h2 {
 #LdtPlayer {
     margin: 0px;
     background-color: #fff;
-    min-height: 300px;
+    /*min-height: 300px;*/
     height: 60%;
 }
 
@@ -570,3 +571,10 @@ div.hopscotch-bubble {
   z-index: 99;
 }
 
+.splitter-bar{
+    background-color:black;
+    opacity:0.4;
+}
+#PlayerContainer{
+    height:100%;
+}
