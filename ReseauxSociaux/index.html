@@ -8,7 +8,7 @@
         <link href="../main.css" rel="stylesheet" type="text/css">
         <link href="../hopscotch.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="../libs/jquery-ui.css">
-        <link rel="stylesheet" href="../libs/jquery.splitter.css">
+        <link rel="stylesheet" href="../libs/jquery.touchsplitter.css">
   </head>
 
     <body>
@@ -59,7 +59,10 @@
       <section id="content">
         <section class="column playercolumn">
           <h1 class="coconotes"><span title="Réseaux sociaux et graphes" class="meta-title">Réseaux sociaux et graphes</span> - <span class="meta-author"> Colin de la Higuera</span></h1>
-          <div id="LdtPlayer"></div>
+          <div id="PlayerContainer">
+              <div id="ControlledVideoPlayer"></div>
+              <div id="LdtPlayer"></div>
+          </div>
         </section>
 
         <section class="column tabcolumn">
@@ -113,7 +116,7 @@
       </footer>
 <script type="text/javascript" src="../libs/jquery.min.js"></script>
 <script type="text/javascript" src="../libs/jquery-ui.min.js"></script>
-<script type="text/javascript" src="../libs/jquery.splitter.js"></script>
+<script type="text/javascript" src="../libs/jquery.touchsplitter.js"></script>
 <script type="text/javascript" src="../libs/jquery.ui.touch-punch.min.js"></script>
 <script type="text/javascript" src="../metadataplayer/LdtPlayer-core.js"></script>
 <script type="text/javascript" src="../hopscotch.min.js"></script>

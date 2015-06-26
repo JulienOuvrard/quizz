@@ -19,6 +19,7 @@ var _config = {
     widgets: [
           {
               type: "SlideVideoPlayer",
+              container: "ControlledVideoPlayer",
               video: vid_url,
               width: '100%',
               url_transform: function(n) {
@@ -40,8 +41,11 @@ var _config = {
           },
           { type: "Mediafragment"},
           { type: "Shortcuts"},
-          { type: "Slider" },
+          { type: "Slider",
+            container: "ControlledVideoPlayer"
+          },
           { type: "Controller",
+            container: "ControlledVideoPlayer",
             disable_annotate_btn: true,
             always_show_search: true,
             create_quizz_callback: function () {
