@@ -6,7 +6,11 @@
   height: 25px;
   border: 1px solid #b6b8b8;
   position: relative;
+<<<<<<< HEAD
     bottom: 31px;
+=======
+  bottom: 31px;
+>>>>>>> master
 }
 
 .Ldt-Ctrl-Left {
