@@ -21,7 +21,8 @@
 
 .Ldt-Quizz-Score {
 	display:inline-block;
-	margin-left:90%;
+	position: absolute;
+	right: 20px;
 }
 
 .Ldt-Quizz-Index {
@@ -146,12 +147,14 @@
         height:100%;
 }
 
-.Ldt-Ressources-Overlay {
-		display:none;
-        text-align:center;
-        z-index:1;
-        background-color:white;
-        width:622px;
+.Ldt-Pause-Add-Question {
+  	position: absolute;
+  	bottom: 110px;
+  	height: 106px;
+  	width: 121px;
+	background-color: transparent;
+    	z-index:1;
+	right: 20px;
 }
 
 .Ldt-Quizz-Result {
