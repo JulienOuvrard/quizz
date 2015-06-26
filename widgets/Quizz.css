@@ -153,8 +153,8 @@
   	height: 106px;
   	width: 121px;
 	background-color: transparent;
-    	z-index:1;
-	right: 20px;
+    	z-index:100;
+	right: 40px;
 }
 
 .Ldt-Quizz-Result {

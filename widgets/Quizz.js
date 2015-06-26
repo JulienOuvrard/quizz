@@ -302,7 +302,7 @@ IriSP.Widgets.Quizz.prototype.draw = function() {
     }); 
 
 
-	var circle = '<svg height="100" width="100"><img id="PAQ" src="../widgets/img/addQuestion.svg"/></svg>';
+	var circle = '<img id="PAQ" src="../widgets/img/addQuestion.svg"/>';
 		
     this.onMediaEvent("pause", function() {
 		if(_this.quizz_displayed){
@@ -316,8 +316,8 @@ IriSP.Widgets.Quizz.prototype.draw = function() {
 	$(".Ldt-Pause-Add-Question").html(circle).hide();
     });
   
+	_this.container = $("<div class='Ldt-Quizz-Overlay right_panel'></div>").appendTo($("[widget-type*=Player]"));
 	_this.PauseAddQuestion = $("<div class='Ldt-Pause-Add-Question'></div>").prependTo($("[widget-type*=Player]"));
-	_this.container = $("<div class='Ldt-Quizz-Overlay right_panel'></div>").prependTo($("[widget-type*=Player]"));
 	_this.container.html(this.template);
 	
 
