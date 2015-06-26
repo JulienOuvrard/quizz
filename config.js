@@ -152,18 +152,13 @@ var take_the_tour = function () {
               IriSP.jQuery("[widget-type=Segments]").resize();
           }
 
-          var splitter;
+          var splitter, splitter2;
+            splitter =  $("#content").touchSplit();
+            splitter2 = $("#PlayerContainer").touchSplit({orientation:"vertical"});
+            
           _myPlayer.on("widgets-loaded", function () {
               set_username(name);
-              splitter = $("#content").split({
-                  orientation: 'vertical',
-                  position: '66%',
-                  limit: 100,
-                  onDragEnd: function (e) {
-                      on_resize();
-                      return false;
-                  }
-              });
-              window.setTimeout(function () { splitter.position('66%');
-                                              on_resize(); }, 500);
+              window.setTimeout(function () { 
+                  on_resize(); 
+                  }, 500);
           });
