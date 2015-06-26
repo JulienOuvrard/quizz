@@ -143,7 +143,7 @@ var _config = {
           },
           {
               type: "Quizz",
-              container: "",
+              container: "ControlledVideoPlayer",
               annotation_type: "Quizz",
               show_creator: true,
               show_audio: false,
