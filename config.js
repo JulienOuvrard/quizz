@@ -154,7 +154,7 @@ var take_the_tour = function () {
 
           var splitter, splitter2;
             splitter =  $("#content").touchSplit();
-            splitter2 = $("#PlayerContainer").touchSplit({orientation:"vertical"});
+            splitter2 = $("#PlayerContainer").touchSplit({orientation:"vertical", topMin: 220});
             
           _myPlayer.on("widgets-loaded", function () {
               set_username(name);
