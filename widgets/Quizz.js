@@ -273,6 +273,8 @@ IriSP.Widgets.Quizz.prototype.draw = function() {
         return _annotation.begin;
     });
 	
+    //$(".Ldt-Pause-Add-Question").html('<img id="PAQ" src="../widgets/img/addQuestion.svg"/>');
+	$(".Ldt-Pause-Add-Question").hide();
 	console.log(_annotations.length + " Quizz annotations ");
 	
 	_this.quizz_displayed = false;
@@ -300,24 +302,23 @@ IriSP.Widgets.Quizz.prototype.draw = function() {
 		console.log("[Quizz] refreshed");
 		_this.refresh();		
     }); 
-
-
-	var circle = '<img id="PAQ" src="../widgets/img/addQuestion.svg"/>';
-		
+    
+    
     this.onMediaEvent("pause", function() {
-		if(_this.quizz_displayed){
-	$(".Ldt-Pause-Add-Question").html(circle).hide();}
-		else{$(".Ldt-Pause-Add-Question").html(circle).show();}
-		
-	document.getElementById( "PAQ" ).onclick = function() {_this.create_quizz_callback();};
+		if(! _this.quizz_displayed) {
+		    $(".Ldt-Pause-Add-Question").show();
+		    $(".Ldt-Pause-Add-Question").on("click", function() {
+		_this.create_quizz_callback();
+		})
+      }	
+   	
     });
     
     this.onMediaEvent("play", function() {
-	$(".Ldt-Pause-Add-Question").html(circle).hide();
+	   $(".Ldt-Pause-Add-Question").hide();
     });
-  
 	_this.container = $("<div class='Ldt-Quizz-Overlay right_panel'></div>").appendTo($("[widget-type*=Player]"));
-	_this.PauseAddQuestion = $("<div class='Ldt-Pause-Add-Question'></div>").appendTo($("[widget-type*=Player]"));
+	_this.PauseAddQuestion = $("<div class='Ldt-Pause-Add-Question'></div>").prependTo($("[widget-type*=Player]"));
 	_this.container.html(this.template);
 	
 

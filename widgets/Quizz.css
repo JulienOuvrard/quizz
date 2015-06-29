@@ -149,12 +149,13 @@
 
 .Ldt-Pause-Add-Question {
   	position: absolute;
-  	bottom: 110px;
-  	height: 106px;
-  	width: 121px;
-	background-color: transparent;
+  	bottom: 50px;
+  	height: 140px;
+  	width: 210px;	
+  	background: url('../widgets/img/addQuestion.svg') no-repeat;
     	z-index:100;
-	right: 40px;
+	right: 45px;
+	 background-position: center;
 }
 
 .Ldt-Quizz-Result {
