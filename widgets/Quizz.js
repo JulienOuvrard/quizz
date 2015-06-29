@@ -400,10 +400,10 @@ IriSP.Widgets.MultipleChoiceQuestion = function(annotation) {
 IriSP.Widgets.MultipleChoiceQuestion.prototype = new IriSP.Widgets.Widget();
 
 IriSP.Widgets.MultipleChoiceQuestion.prototype.isCorrect = function(answer, valid) {
-	if (this.annotation.content.data.answers[answer].correct == true && valid == true) {
+	if (this.annotation.content.data.answers[answer].correct && valid) {
 		return true;
 	}
-	else if ((typeof this.annotation.content.data.answers[answer].correct === "undefined" || this.annotation.content.data.answers[answer].correct == false) && valid == false) {
+	else if ((typeof this.annotation.content.data.answers[answer].correct === "undefined" || ! this.annotation.content.data.answers[answer].correct) && ! valid) {
 		return true;
 	}
 	return false;
