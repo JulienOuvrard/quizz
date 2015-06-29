@@ -377,12 +377,12 @@ IriSP.Widgets.UniqueChoiceQuestion.prototype.isCorrect = function(answer, valid)
 }
 
 IriSP.Widgets.UniqueChoiceQuestion.prototype.renderQuizzTemplate = function(answer, identifier) {
-	return '<input type="radio" class="quizz-question Ldt-Quizz-Question-Check-'+ identifier +'" name="question" data-question="'+ identifier +'" value="' + identifier + '" />';
+	return '<input type="radio" class="quizz-question Ldt-Quizz-Question-Check-' + identifier + '" name="question" data-question="' + identifier + '" value="' + identifier + '" />';
 }
 
 IriSP.Widgets.UniqueChoiceQuestion.prototype.renderTemplate = function(answer, identifier) {
 	var id = this.generateUid();
-	return '<input type="radio" id="'+ id +'" class="quizz-question-edition Ldt-Quizz-Question-Check-'+ identifier +'" name="question" data-question="'+ identifier +'" value="' + identifier + '" /><label for="'+ id +'" title="Veuillez sélectionner la réponse correcte"></label>';
+	return '<input type="radio" id="' + id + '" class="quizz-question-edition Ldt-Quizz-Question-Check-'+ identifier +'" name="question" data-question="'+ identifier +'" value="' + identifier + '" /><label for="'+ id +'" title="Veuillez sélectionner la réponse correcte"></label>';
 }
 
 IriSP.Widgets.UniqueChoiceQuestion.prototype.renderFullTemplate = function(answer, identifier) {
