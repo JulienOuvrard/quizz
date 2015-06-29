@@ -317,8 +317,8 @@ IriSP.Widgets.Quizz.prototype.draw = function() {
     this.onMediaEvent("play", function() {
 	   $(".Ldt-Pause-Add-Question").hide();
     });
-	_this.container = $("<div class='Ldt-Quizz-Overlay right_panel'></div>").appendTo($("[widget-type*=ControlledVideoPlayer]"));
-	_this.PauseAddQuestion = $("<div class='Ldt-Pause-Add-Question'></div>").prependTo($("[widget-type*=ControlledVideoPlayer]"));
+	_this.container = $("<div class='Ldt-Quizz-Overlay right_panel'></div>").appendTo($("[widget-type*=Player]"));
+	_this.PauseAddQuestion = $("<div class='Ldt-Pause-Add-Question'></div>").prependTo($("[widget-type*=Player]"));
 	_this.container.html(this.template);
 	
 
