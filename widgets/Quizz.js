@@ -286,9 +286,10 @@ IriSP.Widgets.Quizz.prototype.draw = function() {
 	   $(".Ldt-Pause-Add-Question").hide();
     });
 
-	_this.container = $("<div class='Ldt-Quizz-Overlay right_panel'></div>").appendTo($("[widget-type*=Player]"));
-	_this.PauseAddQuestion = $("<div class='Ldt-Pause-Add-Question'></div>").prependTo($("[widget-type*=Player]"));
-	_this.container.html(this.template);
+    // Add Ldt-Quizz-Overlay widget on top of video player
+	_this.overlay = $("<div class='Ldt-Quizz-Overlay'></div>").appendTo($('#' + _this.container));
+	_this.PauseAddQuestion = $("<div class='Ldt-Pause-Add-Question'></div>").appendTo($('#' + _this.container));
+	_this.overlay.html(this.template);
 
 	$(".Ldt-Quizz-Overlay").hide();
 
@@ -341,7 +342,7 @@ IriSP.Widgets.Quizz.prototype.draw = function() {
 	_this.keys = {};
 
     _annotations.forEach(function(_a) {
-		//Fix each annotation as "non-answered yet"
+		// Mark each annotation as "non-answered yet"
 		_this.correct[_a.id] = -1;
 		_this.keys[_this.number] = _a.id;
 		_a.number = _this.number++;
