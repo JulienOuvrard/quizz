@@ -1,5 +1,3 @@
-/* This widget displays the image associated to the annotation in the given container */
-
 IriSP.Widgets.Quizz = function(player, config) {
     IriSP.Widgets.Widget.call(this, player, config);
 }
@@ -14,7 +12,6 @@ IriSP.Widgets.Quizz.prototype.defaults = {
     api_method: "POST",
     user: "",
     userid:""
-    // container: "imageContainer"
 }
 
 IriSP.Widgets.Quizz.prototype.template = '<div class="Ldt-Quizz-Container">'
@@ -32,7 +29,7 @@ IriSP.Widgets.Quizz.prototype.template = '<div class="Ldt-Quizz-Container">'
 										+ '			<h1>Avez-vous trouvé cette question utile ?</h1>'
 										+ '			<div class="Ldt-Quizz-Votes-Buttons">'
 										+ '				<div><input type="button" value="Non" class="Ldt-Quizz-Vote-Useless" /></div>'
-										+ '				<div><input type="button" value="Oui" class="Ldt-Quizz-Vote-Usefull" /></div>'
+										+ '				<div><input type="button" value="Oui" class="Ldt-Quizz-Vote-Useful" /></div>'
 										+ '				<div class="Ldt-Quizz-Vote-Skip-Block"><a href="#" class="Ldt-Quizz-Vote-Skip">Passer</a></div>'
 										+ ' 		</div>'
 										+ '		</div>'
@@ -48,14 +45,13 @@ IriSP.Widgets.Quizz.prototype.update = function(annotation) {
 		this.correct[annotation.id] != 0) {
 
 		console.log("new annotation : ");
-		console.log(annotation);		
+		console.log(annotation);
 		_this.quizz_displayed = true;
 		//Pause the current video
 		this.media.pause();
 
 		this.annotation = annotation;
 
-		
 		var question = annotation.content.data.question;
 		var answers = annotation.content.data.answers;
 		var resource = annotation.content.data.resource;
@@ -66,7 +62,7 @@ IriSP.Widgets.Quizz.prototype.update = function(annotation) {
 
 		$(".Ldt-Quizz-Container .Ldt-Quizz-Title").html(question);
 
-		var i = 0
+		var i = 0;
 
 		var correctness = this.globalScore();
 
@@ -85,33 +81,26 @@ IriSP.Widgets.Quizz.prototype.update = function(annotation) {
 			this.question = new IriSP.Widgets.UniqueChoiceQuestion(annotation);
 		this.resource = new IriSP.Widgets.UniqueChoiceQuestion(resource);
 		}
-		
+
 		var output = "";
 		for (i = 0; i < answers.length; i++) {
-			//alert( answers[i].content);
-
 			output += '<div class="quizz-question-block"><p>' + this.question.renderQuizzTemplate(answers[i], i) + '<span class="quizz-question-label">'+ answers[i].content + '</span></p>';
 			var color = (answers[i].correct == true) ? "quizz-question-correct-feedback" : "quizz-question-incorrect-feedback";
 			output += '<div class="quizz-question-feedback '+ color +'">'+ answers[i].feedback +'</div>';
 			output += '</div>';
+		}
 
-		}	
-		
-		
-		QR='<div class="quizz-resource-block" id="resource" ><p>'+resource+'</p></div>';		
-		QR += output;
-		
+
+		var QR = '';
 		//If there is an attached resource, display it on the resources overlay
-		if ( resource != null) {
-			$(".Ldt-Quizz-Questions").html( QR);
-		}
-		else {
-			$(".Ldt-Quizz-Questions").html(output);
-		}
+		if (resource != null) {
+            QR = '<div class="quizz-resource-block" id="resource" ><p>' + resource + '</p></div>';
+        };
+		$(".Ldt-Quizz-Questions").html(QR + output);
 		$(".Ldt-Quizz-Overlay").show();
-		
+
 		$(".Ldt-Quizz-Submit").fadeIn();
-	
+
 		//Let's automatically check the checkbox/radio if we click on the label
 		$(".quizz-question-label").click(function() {
 			var parent = $(this).parent().children('.quizz-question').first().prop('checked', true);
@@ -132,46 +121,28 @@ IriSP.Widgets.Quizz.prototype.update = function(annotation) {
 			_this.player.trigger("QuizzCreator.skip");
 			event.data.media.play();
 		});
-
-		var _this = this;
-		//Trying to catch timeupdate and play events
-		/*
-		this.onMediaEvent("timeupdate", function(_time) {
-		    if (_time < annotation.begin || _time > ( annotation.begin + 1000) ) {
-				_this.hide();
-				_this.media.play();
-			}
-		});
-		this.onMediaEvent("play", function(_time) {
-		    if (_time < annotation.begin || _time > ( annotation.begin + 500)) {
-				_this.hide();
-			}
-		});
-		*/
 	}
 };
 
 IriSP.Widgets.Quizz.prototype.hide = function() {
+	var _this = this;
+
 	$(".Ldt-Quizz-Votes").fadeOut();
 	$(".Ldt-Quizz-Overlay").hide();
 	$(".Ldt-Pause-Add-Question").hide();
-	var _this = this;
-	
 	_this.quizz_displayed = false;
 }
 
-IriSP.Widgets.Quizz.prototype.answer = function() { 
-	//alert(this.annotation.content.data.question);
+IriSP.Widgets.Quizz.prototype.answer = function() {
+	var _this = this;
 	//Display feedbacks
-
 	$( ".quizz-question-feedback").each(function(index) {
 		$(this).fadeIn();
 	});
 
-	var answers = this.annotation.content.data.answers;
+	var answers = _this.annotation.content.data.answers;
 	var faux = false;
 	var i =0;
-	var _this = this;
 	var ans_property;
 	var ans_value;
 	while (i < answers.length && faux == false) {
@@ -181,23 +152,22 @@ IriSP.Widgets.Quizz.prototype.answer = function() {
 		}
 		i++;
 	}
-	var j=0;
+	var j = 0;
 	while (j < answers.length){
-		if($(".Ldt-Quizz-Container .Ldt-Quizz-Question-Check-" + j).is(':checked')){
-			ans_value=j;
+		if($(".Ldt-Quizz-Container .Ldt-Quizz-Question-Check-" + j).is(':checked')) {
+			ans_value = j;
 		}
 		j++;
 	}
-	
 	$(".Ldt-Quizz-Score").fadeIn();
 
-	//Todo : display the result in a cool way :)
+	// TODO: factorize this code
 	if (faux == true) {
 		$(".Ldt-Quizz-Result").html("Mauvaise réponse");
 		$(".Ldt-Quizz-Result").css({"background-color" : "red"});
 		$('*[data-annotation="'+ this.annotation.id +'"]').children(".Ldt-AnnotationsList-Duration").children(".Ldt-AnnotationsList-Begin").removeClass("Ldt-Quizz-Correct-Answer").addClass("Ldt-Quizz-Incorrect-Answer");
 		this.correct[this.annotation.id] = 0;
-		ans_property="wrong_answer";
+		ans_property = "wrong_answer";
 	}
 	else
 	{
@@ -205,32 +175,32 @@ IriSP.Widgets.Quizz.prototype.answer = function() {
 		$(".Ldt-Quizz-Result").css({"background-color" : "green"});
 		$('*[data-annotation="'+ this.annotation.id +'"]').children(".Ldt-AnnotationsList-Duration").children(".Ldt-AnnotationsList-Begin").removeClass("Ldt-Quizz-Incorrect-Answer").addClass("Ldt-Quizz-Correct-Answer");
 		this.correct[this.annotation.id] = 1;
-		ans_property="right_answer";
+		ans_property = "right_answer";
 	}
-	$(".Ldt-Quizz-Result").animate({height:"100%"},500, "linear", function(){
-		$(".Ldt-Quizz-Result").delay( 2000 ).animate({height:"0%"}, 500);
+	$(".Ldt-Quizz-Result").animate({height:"100%"},500, "linear", function() {
+		$(".Ldt-Quizz-Result").delay(2000).animate({ height:"0%" }, 500);
 	});
 
-	var question_number= this.annotation.number+1;
+	var question_number= this.annotation.number + 1;
 	var correctness = this.globalScore();
 	var score = "";
 	score += '<span class="Ldt-Quizz-Correct-Answer">' + correctness[0] +'</span> / <span class="Ldt-Quizz-Incorrect-Answer">' + correctness[1] + '</span>';
 	$(".Ldt-Quizz-Index").html("Q"+ question_number + "/" + this.totalAmount);
 	$(".Ldt-Quizz-Score").html(score);
 
-	this.submit(this.user,this.userid,this.annotation.id,ans_property,ans_value);
-	
+	this.submit(this.user, this.userid, this.annotation.id, ans_property, ans_value);
+
 	//Hide the "Validate" button and display the UI dedicated to votes
 	$(".Ldt-Quizz-Submit").fadeOut();
 	$(".Ldt-Quizz-Votes").delay(500).fadeIn();
-	
 };
 
-IriSP.Widgets.Quizz.prototype.globalScore = function() { 
-	//Define 2 variables to know how good and bad answers there are
+IriSP.Widgets.Quizz.prototype.globalScore = function() {
+	//Define 2 variables to know how many good and bad answers there are
+    // TODO: replace by _.countBy
 	var ok = 0;
 	var ko = 0;
-	for(var i = 0; i < this.totalAmount; i++) {
+	for (var i = 0; i < this.totalAmount; i++) {
 		if (this.correct[this.keys[i]] == 1) {
 			ok++;
 		}
@@ -243,7 +213,7 @@ IriSP.Widgets.Quizz.prototype.globalScore = function() {
 	return array;
 }
 
-IriSP.Widgets.Quizz.prototype.refresh = function() { 
+IriSP.Widgets.Quizz.prototype.refresh = function() {
     var _annotations = this.getWidgetAnnotations().sortBy(function(_annotation) {
         return _annotation.begin;
     });
@@ -267,23 +237,22 @@ IriSP.Widgets.Quizz.prototype.refresh = function() {
 
 }
 
-IriSP.Widgets.Quizz.prototype.draw = function() {   
+IriSP.Widgets.Quizz.prototype.draw = function() {
 	var _this = this;
     var _annotations = this.getWidgetAnnotations().sortBy(function(_annotation) {
         return _annotation.begin;
     });
-	
+
     //$(".Ldt-Pause-Add-Question").html('<img id="PAQ" src="../widgets/img/addQuestion.svg"/>');
 	$(".Ldt-Pause-Add-Question").hide();
 	console.log(_annotations.length + " Quizz annotations ");
-	
+
 	_this.quizz_displayed = false;
-    
-	
+
     this.onMdpEvent("Quizz.activate", function() {
 		_this.quizz_activated = true;
 		$("#tab_quizz_toc").show();
-		console.log("[Quizz] : abled");
+		console.log("[Quizz] : enabled");
     });
 
     this.onMdpEvent("Quizz.deactivate", function() {
@@ -294,33 +263,33 @@ IriSP.Widgets.Quizz.prototype.draw = function() {
     });
 
     this.onMdpEvent("Quizz.hide", function() {
-		console.log("[Quizz] hide");
+		console.log("[Quizz] hidden");
 		_this.hide();
     });
 
     this.onMdpEvent("Quizz.refresh", function() {
 		console.log("[Quizz] refreshed");
-		_this.refresh();		
-    }); 
-    
-    
+		_this.refresh();
+    });
+
     this.onMediaEvent("pause", function() {
 		if(! _this.quizz_displayed) {
 		    $(".Ldt-Pause-Add-Question").show();
 		    $(".Ldt-Pause-Add-Question").on("click", function() {
 		_this.create_quizz_callback();
-		})
-      }	
-   	
+		});
+      }
+
     });
-    
+
     this.onMediaEvent("play", function() {
 	   $(".Ldt-Pause-Add-Question").hide();
     });
-	_this.container = $("<div class='Ldt-Quizz-Overlay right_panel'></div>").appendTo($("[widget-type*=Player]"));
-	_this.PauseAddQuestion = $("<div class='Ldt-Pause-Add-Question'></div>").prependTo($("[widget-type*=Player]"));
-	_this.container.html(this.template);
-	
+
+    // Add Ldt-Quizz-Overlay widget on top of video player
+	_this.overlay = $("<div class='Ldt-Quizz-Overlay'></div>").appendTo($('#' + _this.container));
+	_this.PauseAddQuestion = $("<div class='Ldt-Pause-Add-Question'></div>").appendTo($('#' + _this.container));
+	_this.overlay.html(this.template);
 
 	$(".Ldt-Quizz-Overlay").hide();
 
@@ -331,36 +300,33 @@ IriSP.Widgets.Quizz.prototype.draw = function() {
     });
 
 	//In case we click on the first "Skip" link
-	$(".quizz-submit-skip-link").click({media: this.media}, function(event) {
-		_this.submit(_this.user,_this.userid,_this.annotation.id,"skipped_answer",0);
+	$(".quizz-submit-skip-link").click({ media: this.media }, function(event) {
+		_this.submit(_this.user, _this.userid, _this.annotation.id, "skipped_answer", 0);
 		_this.hide();
 		_this.player.trigger("QuizzCreator.skip");
 		event.data.media.play();
 	});
-		
+
     $(".Ldt-Quizz-Votes-Buttons input[type=\"button\"], .Ldt-Quizz-Votes-Buttons a").click({media: this.media}, function(event) {
-		//Todo : thanks people for their feedback, then close the quizz window
-		
 		var vote_prop, vote_val;
-		
-		if ($(this).hasClass("Ldt-Quizz-Vote-Usefull")){
-			vote_prop = "usefull"
+
+		if ($(this).hasClass("Ldt-Quizz-Vote-Useful")) {
+			vote_prop = "useful";
 			vote_val = 1;
-		}else if ($(this).hasClass("Ldt-Quizz-Vote-Useless")){
+		} else if ($(this).hasClass("Ldt-Quizz-Vote-Useless")) {
 			vote_prop = "useless";
 			vote_val = -1;
-			
-			$(".Ldt-Ctrl-Quizz-Create").addClass("button_highlight").delay(5000).queue(function(){
+
+			$(".Ldt-Ctrl-Quizz-Create").addClass("button_highlight").delay(5000).queue(function() {
                 $(this).removeClass("button_highlight").dequeue();
             });
-            
 		}else{
 			vote_prop = "skipped_vote";
 			vote_val = 0;
 		}
-		
-		_this.submit(_this.user,_this.userid,_this.annotation.id,vote_prop,vote_val);
-		
+
+		_this.submit(_this.user, _this.userid, _this.annotation.id, vote_prop, vote_val);
+
 		//Resume the current video
 		event.data.media.play();
 
@@ -368,8 +334,6 @@ IriSP.Widgets.Quizz.prototype.draw = function() {
 		$(".Ldt-Pause-Add-Question").hide();
 
 		_this.player.trigger("QuizzCreator.skip");
-		
-
 	});
 
 	_this.totalAmount = _annotations.length;
@@ -378,7 +342,7 @@ IriSP.Widgets.Quizz.prototype.draw = function() {
 	_this.keys = {};
 
     _annotations.forEach(function(_a) {
-		//Fix each annotation as "non-answered yet"
+		// Mark each annotation as "non-answered yet"
 		_this.correct[_a.id] = -1;
 		_this.keys[_this.number] = _a.id;
 		_a.number = _this.number++;
@@ -405,22 +369,21 @@ IriSP.Widgets.UniqueChoiceQuestion = function(annotation) {
 IriSP.Widgets.UniqueChoiceQuestion.prototype = new IriSP.Widgets.Widget();
 
 IriSP.Widgets.UniqueChoiceQuestion.prototype.isCorrect = function(answer, valid) {
-	if (this.annotation.content.data.answers[answer].correct == true && valid == true) {
+	if (this.annotation.content.data.answers[answer].correct && valid) {
 		return true;
-	}
-	else if ((typeof this.annotation.content.data.answers[answer].correct === "undefined" || this.annotation.content.data.answers[answer].correct == false) && valid == false) {
+	} else if ((typeof this.annotation.content.data.answers[answer].correct === "undefined" || ! this.annotation.content.data.answers[answer].correct) && ! valid) {
 		return true;
 	}
 	return false;
 }
 
 IriSP.Widgets.UniqueChoiceQuestion.prototype.renderQuizzTemplate = function(answer, identifier) {
-	return '<input type="radio" class="quizz-question Ldt-Quizz-Question-Check-'+ identifier +'" name="question" data-question="'+ identifier +'" value="' + identifier + '" />';
+	return '<input type="radio" class="quizz-question Ldt-Quizz-Question-Check-' + identifier + '" name="question" data-question="' + identifier + '" value="' + identifier + '" />';
 }
 
 IriSP.Widgets.UniqueChoiceQuestion.prototype.renderTemplate = function(answer, identifier) {
 	var id = this.generateUid();
-	return '<input type="radio" id="'+ id +'" class="quizz-question-edition Ldt-Quizz-Question-Check-'+ identifier +'" name="question" data-question="'+ identifier +'" value="' + identifier + '" /><label for="'+ id +'" title="Veuillez sélectionner la réponse correcte"></label>';
+	return '<input type="radio" id="' + id + '" class="quizz-question-edition Ldt-Quizz-Question-Check-'+ identifier +'" name="question" data-question="'+ identifier +'" value="' + identifier + '" /><label for="'+ id +'" title="Veuillez sélectionner la réponse correcte"></label>';
 }
 
 IriSP.Widgets.UniqueChoiceQuestion.prototype.renderFullTemplate = function(answer, identifier) {
@@ -438,10 +401,10 @@ IriSP.Widgets.MultipleChoiceQuestion = function(annotation) {
 IriSP.Widgets.MultipleChoiceQuestion.prototype = new IriSP.Widgets.Widget();
 
 IriSP.Widgets.MultipleChoiceQuestion.prototype.isCorrect = function(answer, valid) {
-	if (this.annotation.content.data.answers[answer].correct == true && valid == true) {
+	if (this.annotation.content.data.answers[answer].correct && valid) {
 		return true;
 	}
-	else if ((typeof this.annotation.content.data.answers[answer].correct === "undefined" || this.annotation.content.data.answers[answer].correct == false) && valid == false) {
+	else if ((typeof this.annotation.content.data.answers[answer].correct === "undefined" || ! this.annotation.content.data.answers[answer].correct) && ! valid) {
 		return true;
 	}
 	return false;
@@ -465,20 +428,20 @@ IriSP.Widgets.MultipleChoiceQuestion.prototype.renderFullTemplate = function(ans
 IriSP.Widgets.Quizz.prototype.submit = function(user,user_id,question,prop,val) {
 	var _url = Mustache.to_html(this.api_endpoint_template, {id: this.source.projectId}),
 	donnees = {
-			"username": user, 
-			"useruuid": user_id,  
+			"username": user,
+			"useruuid": user_id,
 			"subject": question,
 			"property": prop,
 			"value": val
 		};
-	
+
 	IriSP.jQuery.ajax({
             url: _url,
             type: this.api_method,
             contentType: 'application/json',
-            data: JSON.stringify(donnees), 
+            data: JSON.stringify(donnees),
             success: function(_data) {
-		console.log("données enregistrées avec succès " +JSON.stringify(donnees));	
+		console.log("données enregistrées avec succès " +JSON.stringify(donnees));
             },
             error: function(_xhr, _error, _thrown) {
                 IriSP.log("Error when sending annotation", _thrown);
