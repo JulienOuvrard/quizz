@@ -1,5 +1,3 @@
-/* This widget displays the image associated to the annotation in the given container */
-
 IriSP.Widgets.Quizz = function(player, config) {
     IriSP.Widgets.Widget.call(this, player, config);
 }
