@@ -153,7 +153,7 @@ var take_the_tour = function () {
           }
 
           var splitter, splitter2;
-            splitter =  $("#content").touchSplit();
+            splitter =  $("#content").touchSplit({leftMin:"1200"});
             splitter2 = $("#PlayerContainer").touchSplit({orientation:"vertical"});
             
           _myPlayer.on("widgets-loaded", function () {
