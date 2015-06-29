@@ -299,8 +299,8 @@ IriSP.Widgets.Quizz.prototype.draw = function() {
     });
 
 	//In case we click on the first "Skip" link
-	$(".quizz-submit-skip-link").click({media: this.media}, function(event) {
-		_this.submit(_this.user,_this.userid,_this.annotation.id,"skipped_answer",0);
+	$(".quizz-submit-skip-link").click({ media: this.media }, function(event) {
+		_this.submit(_this.user, _this.userid, _this.annotation.id, "skipped_answer", 0);
 		_this.hide();
 		_this.player.trigger("QuizzCreator.skip");
 		event.data.media.play();
