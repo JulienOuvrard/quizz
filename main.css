@@ -572,9 +572,7 @@ div.hopscotch-bubble {
 }
 
 .splitter-bar{
-    background-color: #fff;
-    border-left: solid #ccc 1px;
-    border-right: solid #ccc 1px;
+    background-color: #e5e5e5;
 }
 #PlayerContainer{
     height: 100%;
