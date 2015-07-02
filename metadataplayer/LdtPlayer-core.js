@@ -1544,6 +1544,13 @@ IriSP.htmlPlayer = function(media, jqselector, options) {
     videoEl.on("seeked", function() {
         media.trigger("seeked");
     });
+    videoEl.on("click", function() {
+        if (mediaEl.paused) {
+            media.play();
+        } else {
+            media.pause();
+        };
+    });
     
     videoEl.on("dblclick", function () {
         // Toggle fullscreen

@@ -40,13 +40,13 @@ IriSP.Widgets.Quizz.prototype.annotationTemplate = '';
 
 IriSP.Widgets.Quizz.prototype.update = function(annotation) {
 	var _this = this;
+
 	if (this.quizz_activated &&
 		this.correct[annotation.id] != 1 &&
 		this.correct[annotation.id] != 0) {
 
-		console.log("new annotation : ");
-		console.log(annotation);
 		_this.quizz_displayed = true;
+
 		//Pause the current video
 		this.media.pause();
 
@@ -56,10 +56,8 @@ IriSP.Widgets.Quizz.prototype.update = function(annotation) {
 		var answers = annotation.content.data.answers;
 		var resource = annotation.content.data.resource;
 
-		//Hide useless components
-		//$(".Ldt-Pause-Add-Question").hide();
 		$(".Ldt-Quizz-Votes").hide();
-
+        $(".Ldt-Pause-Add-Question").hide();
 		$(".Ldt-Quizz-Container .Ldt-Quizz-Title").html(question);
 
 		var i = 0;
@@ -242,13 +240,7 @@ IriSP.Widgets.Quizz.prototype.draw = function() {
     var _annotations = this.getWidgetAnnotations().sortBy(function(_annotation) {
         return _annotation.begin;
     });
-
-    //$(".Ldt-Pause-Add-Question").html('<img id="PAQ" src="../widgets/img/addQuestion.svg"/>');
-	$(".Ldt-Pause-Add-Question").hide();
-	console.log(_annotations.length + " Quizz annotations ");
-
 	_this.quizz_displayed = false;
-
     this.onMdpEvent("Quizz.activate", function() {
 		_this.quizz_activated = true;
 		$("#tab_quizz_toc").show();
@@ -288,12 +280,10 @@ IriSP.Widgets.Quizz.prototype.draw = function() {
 
     // Add Ldt-Quizz-Overlay widget on top of video player
 	_this.overlay = $("<div class='Ldt-Quizz-Overlay'></div>").appendTo($('#' + _this.container));
-	_this.PauseAddQuestion = $("<div class='Ldt-Pause-Add-Question'></div>").appendTo($('#' + _this.container));
+	_this.PauseAddQuestion = $("<div class='Ldt-Pause-Add-Question'><img class='Ldt-Pause-Add-Question-icon' title='Ajoutez une question !' src='../widgets/img/buzz.svg'>").appendTo($('#' + _this.container));
 	_this.overlay.html(this.template);
 
 	$(".Ldt-Quizz-Overlay").hide();
-
-    console.log("Quizz was drawn");
 
     $(".Ldt-Quizz-Submit input").click(function() {
 		_this.answer();
