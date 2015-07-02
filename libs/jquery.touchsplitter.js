@@ -157,7 +157,7 @@
         }
         this.barThicknessPx = barThick / 2;
         this.barThickness = .04;
-        this.barPosition = 0.5;
+        this.barPosition = options.barPosition || 0.5;
         this.dragging = false;
         this.initMouse = 0;
         this.initBarPosition = 0;
