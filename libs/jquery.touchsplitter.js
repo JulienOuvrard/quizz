@@ -395,7 +395,6 @@
               };
             })(this), 0);
           }
-          $(this).trigger("endresize");
         }
       };
 
