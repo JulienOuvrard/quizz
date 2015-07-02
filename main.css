@@ -19,6 +19,13 @@ time, mark, audio, video {
     vertical-align: baseline;
 }
 
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 em {
     font-style: italic;
 }
@@ -571,8 +578,13 @@ div.hopscotch-bubble {
   z-index: 99;
 }
 
-.splitter-bar{
-    background-color: #e5e5e5;
+.TouchSplitter.h-ts>div.splitter-bar {
+    border-left: 1px solid rgba(200, 200, 200, .8);
+    border-right: 1px solid rgba(200, 200, 200, .8);
+}
+.TouchSplitter.v-ts>div.splitter-bar {
+    border-top: 1px solid rgba(200, 200, 200, .8);
+    border-bottom: 1px solid rgba(200, 200, 200, .8);
 }
 #PlayerContainer{
     height: 100%;
