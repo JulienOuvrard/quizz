@@ -57,7 +57,7 @@ IriSP.Widgets.Quizz.prototype.update = function(annotation) {
 		var resource = annotation.content.data.resource;
 
 		$(".Ldt-Quizz-Votes").hide();
-
+        $(".Ldt-Pause-Add-Question").hide();
 		$(".Ldt-Quizz-Container .Ldt-Quizz-Title").html(question);
 
 		var i = 0;
