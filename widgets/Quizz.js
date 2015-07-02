@@ -100,15 +100,6 @@ IriSP.Widgets.Quizz.prototype.update = function(annotation) {
 		//Let's automatically check the checkbox/radio if we click on the label
 		$(".quizz-question-label").click(function() {
 			var parent = $(this).parent().children('.quizz-question').first().prop('checked', true);
-			$(".Ldt-Quizz-Questions .quizz-question").each( function(index, item) {
-				if ($(item).is(':checked')) {
-					$(item).parent().children(".quizz-question-label").css("text-decoration", "underline");
-				}
-				else
-				{
-					$(item).parent().children(".quizz-question-label").css("text-decoration", "none");
-				}
-			});
 		});
 
 		//In case we click on the first "Skip" link
