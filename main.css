@@ -351,10 +351,12 @@ footer img {
     max-height: 250px !important;
 }
 
-#LdtPlayer_widget_SlideVideoPlayer_1 {
-    height: 100%;
+.Ldt-SlideVideoPlayer {
+    height: calc(100% - 32px) !important;
 }
-
+.Ldt-SlideVideoPlayer-video video {
+    max-height: 100%;
+}
 [widget-type=HtmlPlayer] {
     max-width: 600px;
     margin: auto;
