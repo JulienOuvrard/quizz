@@ -568,7 +568,7 @@ div.hopscotch-bubble {
 .button_highlight::after {
   border: solid;
   border-color: #111 transparent;
-  border-color: rgba(0,0,0,.8) transparent;
+  border-color: rgba(0, 0, 0, .8) transparent;
   border-width: .4em .4em 0 .4em;
   top: -0.3em;
   content: "";
