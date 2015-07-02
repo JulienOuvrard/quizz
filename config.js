@@ -153,7 +153,7 @@ _paq.push(['enableLinkTracking']);
     }
 
 var splitter, splitter2;
-splitter =  $("#content").touchSplit()
+splitter =  $("#content").touchSplit({ barPosition: .66 })
     .on("dragstop", function () {
         on_resize();
     });
