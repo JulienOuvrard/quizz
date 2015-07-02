@@ -153,12 +153,11 @@ _paq.push(['enableLinkTracking']);
     }
 
 var splitter, splitter2;
-splitter =  $("#content").touchSplit();
+splitter =  $("#content").touchSplit()
+    .on("dragstop", function () {
+        on_resize();
+    });
 splitter2 = $("#PlayerContainer").touchSplit({orientation:"vertical", topMin: 220});
-splitter2.on("endresize", function () {
-    console.log("drag stop");
-    on_resize();
-});
 _myPlayer.on("widgets-loaded", function () {
     set_username(name);
     window.setTimeout(function () {
