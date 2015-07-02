@@ -26,16 +26,16 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.8101934"
-     inkscape:cx="-66.431298"
-     inkscape:cy="39.104796"
+     inkscape:cx="126.36578"
+     inkscape:cy="105.39606"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1600"
-     inkscape:window-height="837"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
-     inkscape:window-maximized="1" />
+     inkscape:window-width="1680"
+     inkscape:window-height="1128"
+     inkscape:window-x="0"
+     inkscape:window-y="26"
+     inkscape:window-maximized="0" />
   <metadata
      id="metadata4213">
     <rdf:RDF>
@@ -236,17 +236,17 @@
     <rect
        style="fill:#ff0000;fill-opacity:1;stroke:none"
        id="rect4834"
-       width="15.82446"
-       height="91.509979"
+       width="15.000001"
+       height="100.00001"
        x="45.770191"
-       y="931.65686" />
+       y="923.16681" />
     <rect
        style="fill:#ff0000;fill-opacity:1;stroke:none"
        id="rect4834-6"
-       width="14.452189"
-       height="100.35956"
-       x="-984.68573"
-       y="-2.4347434"
-       transform="matrix(-0.00591451,-0.99998251,0.99997381,-0.0072377,0,0)" />
+       width="14.282415"
+       height="99.91748"
+       x="-980.66632"
+       y="-2.488034"
+       transform="matrix(-0.00595846,-0.99998225,0.99997419,-0.00718432,0,0)" />
   </g>
 </svg>
