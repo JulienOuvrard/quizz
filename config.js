@@ -154,7 +154,11 @@ _paq.push(['enableLinkTracking']);
 
 var splitter, splitter2;
 splitter =  $("#content").touchSplit({ barPosition: .66 })
+    .on("dragstart", function () {
+        $(this).find(".splitter-bar").addClass("active");
+    })
     .on("dragstop", function () {
+        $(this).find(".splitter-bar").removeClass("active");
         on_resize();
     });
 splitter2 = $("#PlayerContainer").touchSplit({orientation:"vertical", topMin: 220});

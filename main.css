@@ -580,7 +580,7 @@ div.hopscotch-bubble {
   z-index: 99;
 }
 
-.splitter-bar:active {
+.splitter-bar.active {
     background-color: #ddd;
 }
 
