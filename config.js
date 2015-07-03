@@ -88,41 +88,53 @@ function generateUid () {
 var user_uuid = localStorage.getItem('mla-uuid') || generateUid();
 localStorage.setItem('mla-uuid', user_uuid);
 
+function find_widgets_by_type(typ) {
+    if (_myPlayer.widgets) {
+        return _myPlayer.widgets.filter(function (w) { return w.type == typ; });
+    } else {
+        return [];
+    }
+}
+
 function set_username(u) {
     name = u;
     localStorage.setItem('mla-username', u);
     // Find CreateAnnotation widget and update creator_name
     _myPlayer.config.username = u;
 
-    if (_myPlayer.widgets) {
-        var wid = _myPlayer.widgets.filter(function (w) { return w.type == "CreateAnnotation"; }).map( function (w) { w.creator_name = u; });
-        var wid2 = _myPlayer.widgets.filter(function (w) { return w.type == "Quizz"; }).map( function (w) { w.user = u; w.userid=user_uuid; w.creator_name = u;});
-    }
+    find_widgets_by_type("CreateAnnotation").forEach( function (w) { w.creator_name = u; });
+    find_widgets_by_type("Quizz").forEach( function (w) { w.user = u; w.userid=user_uuid; w.creator_name = u;});
 };
+
 var get_tab_index = function (id) {
     var l = $("#tab > ul > li a").map(function (i, tab) { if (id == tab.getAttribute('href')) return i;});
     // Return 0 index if the id is not found
     return l[0] || 0;
 }
+
 var _tabs = $("#tab").tabs();
+
 _myPlayer.on("Annotation.create", function (a) {
     _tabs.tabs("option", "active", get_tab_index('#tab-contributions'));
 });
 _myPlayer.on("Annotation.publish", function (a) {
     _tabs.tabs("option", "active", get_tab_index('#tab-publiccontributions'));
-    var wid = _myPlayer.widgets
-            .filter(function (w) { return w.type == "AnnotationsList"
-                                   && w.annotation_type == "PublicContribution" })
-            .map( function (w) {
-                w.source.get();
-                w.source.onLoad( function () {
-                    w.refresh();
-                });
-            });
+    // Force reload of public annotations
+    var wid = find_widgets_by_type("AnnotationsList").forEach(
+        function (w) {
+                if (w.annotation_type == "PublicContribution") {
+                    w.source.get();
+                    w.source.onLoad( function () {
+                        w.refresh();
+                    });
+                }
+        });
 });
+
 $("#take_the_tour").click( function (e) {
     take_the_tour();
 });
+
 $(".popup_action").click( function (e) {
     $( "#" + this.getAttribute('id') + "_message" ).dialog({
         modal: true,
@@ -148,6 +160,8 @@ _paq.push(['enableLinkTracking']);
     g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
 })();
     <!-- End Piwik Code -->
+
+    // Resize Segments widgets
     function on_resize() {
         IriSP.jQuery("[widget-type=Segments]").resize();
     }
