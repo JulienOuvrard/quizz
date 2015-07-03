@@ -153,6 +153,8 @@ _paq.push(['enableLinkTracking']);
     }
 
 var splitter, splitter2;
+
+// Splitter between the Player/metadataplayer column and the tabs column
 splitter =  $("#content").touchSplit({ barPosition: .66 })
     .on("dragstart", function () {
         $(this).find(".splitter-bar").addClass("active");
@@ -161,6 +163,8 @@ splitter =  $("#content").touchSplit({ barPosition: .66 })
         $(this).find(".splitter-bar").removeClass("active");
         on_resize();
     });
+
+// Splitter between the video player and the rest of the metadataplayer
 splitter2 = $("#PlayerContainer").touchSplit({orientation:"vertical", topMin: 220});
 _myPlayer.on("widgets-loaded", function () {
     set_username(name);
