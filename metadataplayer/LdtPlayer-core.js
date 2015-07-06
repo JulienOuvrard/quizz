@@ -1574,7 +1574,7 @@ IriSP.htmlPlayer = function(media, jqselector, options) {
     
     videoEl.on("dblclick", function () {
         // Toggle fullscreen
-        IriSP.setFullScreen(videoEl[0]);
+        IriSP.setFullScreen(videoEl[0],1);
     });
 };
 /* START contentapi-serializer.js */
