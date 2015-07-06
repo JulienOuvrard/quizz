@@ -62,11 +62,9 @@ IriSP.Widgets.Quizz.prototype.update = function(annotation) {
 
 		var i = 0;
 
-		var correctness = this.globalScore();
-
-		var score = "";
-		score += '<span class="Ldt-Quizz-Correct-Answer">' + correctness[0] +'</span> / <span class="Ldt-Quizz-Incorrect-Answer">' + correctness[1] + '</span>';
-		$(".Ldt-Quizz-Index").html("Q"+ (annotation.number+1) + "/" + this.totalAmount);
+		var score = Mustache.to_html('<span class="Ldt-Quizz-Correct-Answer">{{ correctness.0 }}</span> / <span class="Ldt-Quizz-Incorrect-Answer">{{ correctness.1 }}</span>', { correctness: this.globalScore() });
+		$(".Ldt-Quizz-Index").html(Mustache.to_html("Q{{index}}/{{total}}", { index: annotation.number + 1,
+                                                                              total: this.totalAmount }));
 		$(".Ldt-Quizz-Score").html(score);
 		this.question = new IriSP.Widgets.UniqueChoiceQuestion(annotation);
 		this.resource = new IriSP.Widgets.UniqueChoiceQuestion(resource);
@@ -102,15 +100,6 @@ IriSP.Widgets.Quizz.prototype.update = function(annotation) {
 		//Let's automatically check the checkbox/radio if we click on the label
 		$(".quizz-question-label").click(function() {
 			var parent = $(this).parent().children('.quizz-question').first().prop('checked', true);
-			$(".Ldt-Quizz-Questions .quizz-question").each( function(index, item) {
-				if ($(item).is(':checked')) {
-					$(item).parent().children(".quizz-question-label").css("text-decoration", "underline");
-				}
-				else
-				{
-					$(item).parent().children(".quizz-question-label").css("text-decoration", "none");
-				}
-			});
 		});
 
 		//In case we click on the first "Skip" link
