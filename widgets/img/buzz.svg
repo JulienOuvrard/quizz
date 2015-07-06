@@ -14,8 +14,8 @@
    viewBox="0 0 212.59843 212.59843"
    id="svg4208"
    version="1.1"
-   inkscape:version="0.91 r13725"
-   sodipodi:docname="buzz.svg">
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="FS.svg">
   <defs
      id="defs4210" />
   <sodipodi:namedview
@@ -32,9 +32,9 @@
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1680"
-     inkscape:window-height="1128"
-     inkscape:window-x="0"
-     inkscape:window-y="26"
+     inkscape:window-height="1028"
+     inkscape:window-x="75"
+     inkscape:window-y="24"
      inkscape:window-maximized="0" />
   <metadata
      id="metadata4213">
@@ -44,7 +44,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>

@@ -44,7 +44,7 @@ IriSP.Widgets.Controller.prototype.template =
     + '<div class="Ldt-Ctrl-Right">'
     + '<div style="float:left;" class="Ldt-Ctrl-Quizz Ldt-TraceMe">'
     + '<div class="Ldt-Ctrl-FullScreen-Buttons"></div>'
-    + '<button class="Ldt-Ctrl-FullScreen-Button"><img id="Ldt-Ctrl-FullScreen-Button" src="../widgets/img/FS.png" title="Plein écran vidéo + slides" style="width:30px;height:30px; margin: -5px 10px 0;"></button>'
+    + '<button class="Ldt-Ctrl-FullScreen-Button"><img id="Ldt-Ctrl-FullScreen-Button" src="../widgets/img/FS.svg" title="Plein écran vidéo + slides" style="width:22px;height:22px; margin: -3px 10px 0;"></button>'
     + '</div>'
     + '<div class="Ldt-Ctrl-spacer"></div>'
     + '<div class="Ldt-Ctrl-Time">'
