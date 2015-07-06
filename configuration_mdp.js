@@ -33,27 +33,23 @@ var configuration_mdp = function(vid_url) {
                     return videoname;
                 }
             },
-            { type: "Trace",
-              url: "http://comin-ocw.org/trace/",
-              requestmode: "GET",
-              default_subject: "comin"
-            },
-            { type: "Mediafragment"},
-            { type: "Shortcuts"},
-            { type: "Slider",
-              container: "ControlledVideoPlayer"
-            },
-            { type: "Controller",
-              container: "ControlledVideoPlayer",
-              disable_annotate_btn: true,
-              always_show_search: true,
-              create_quizz_callback: function () {
-                  console.log("Quizz callback");
-                  $("#QuizzEditContainer").show();
-                  _tabs.tabs("option", "active", get_tab_index('#tab-quizz-edit'));
-              },
-              enable_quizz_toggle: true
-            },
+             { type: "Trace",
+            url: "http://comin-ocw.org/trace/",
+            requestmode: "GET",
+            default_subject: "comin"
+          },
+          { type: "Mediafragment"},
+          { type: "Shortcuts"},
+          { type: "Slider",
+            container: "ControlledVideoPlayer"
+          },
+          { type: "Controller",
+            container: "ControlledVideoPlayer",
+            disable_annotate_btn: true,
+            always_show_search: true,
+            fullscreen_widget: '#SlideVideoPlayer',
+            enable_quizz_toggle: true
+          },
             { type: "CreateAnnotation",
               annotation_type: "Contributions",
               minimize_annotation_widget : true,

@@ -191,9 +191,9 @@ input.Ldt-Ctrl-SearchInput {
 background-color: red;
 }
 
-.Ldt-Ctrl-Quizz-Enable button, .Ldt-Ctrl-Quizz-Create button, .Ldt-Ctrl-Quizz-Disactivated button {
+.Ldt-Ctrl-Quizz-Enable button, .Ldt-Ctrl-Quizz-Create button, .Ldt-Ctrl-Quizz-Disactivated button, .Ldt-Ctrl-FullScreen-Button{
 	width: 100%;
 	border:none;
 	background: transparent;
-}
-
+	}
+	 .Ldt-Ctrl-FullScreen-Button { margin-top:3px;}

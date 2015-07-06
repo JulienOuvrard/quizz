@@ -77,7 +77,34 @@ IriSP.loadCss = function(_cssFile) {
         IriSP._cssCache.push(_cssFile);
     }
 };
-
+IriSP.setFullScreen= function(elem, i){
+        // Toggle fullscreen
+        if (i==1) {
+			
+			if (elem.requestFullscreen) {
+				elem.requestFullscreen();
+			} else if (elem.mozRequestFullScreen) {
+				elem.mozRequestFullScreen();
+			} else if (elem.webkitRequestFullscreen) {
+				elem.webkitRequestFullscreen();
+			}else if (elem.msRequestFullscreen) {
+				elem.msRequestFullscreen();
+			}
+		}
+		else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      } else if (document.msExitFullscreen) {
+        document.msExitFullscreen();
+      } else if (document.mozCancelFullScreen) {
+        document.mozCancelFullScreen();
+      } else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen();
+      }
+    }
+		
+			
+};
 IriSP.textFieldHtml = function(_text, _regexp, _extend) {
     var list = [],
         positions = [],
@@ -1544,24 +1571,10 @@ IriSP.htmlPlayer = function(media, jqselector, options) {
     videoEl.on("seeked", function() {
         media.trigger("seeked");
     });
-    videoEl.on("click", function() {
-        if (mediaEl.paused) {
-            media.play();
-        } else {
-            media.pause();
-        };
-    });
     
     videoEl.on("dblclick", function () {
         // Toggle fullscreen
-        var elem = videoEl[0];
-        if (elem.requestFullscreen) {
-            elem.requestFullscreen();
-        } else if (elem.mozRequestFullScreen) {
-            elem.mozRequestFullScreen();
-        } else if (elem.webkitRequestFullscreen) {
-            elem.webkitRequestFullscreen();
-        }
+        IriSP.setFullScreen(videoEl[0]);
     });
 };
 /* START contentapi-serializer.js */

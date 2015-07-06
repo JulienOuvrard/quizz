@@ -591,3 +591,4 @@ div.hopscotch-bubble {
 #PlayerContainer{
     height: 100%;
 }
+#ControlledVideoPlayer.fullScreen{width: 100%;height: 100%;}
