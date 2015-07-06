@@ -42,6 +42,10 @@ IriSP.Widgets.Controller.prototype.template =
     + '</div>'
     + '</div>'
     + '<div class="Ldt-Ctrl-Right">'
+    + '<div style="float:left;" class="Ldt-Ctrl-Quizz Ldt-TraceMe">'
+    + '<div class="Ldt-Ctrl-FullScreen-Buttons"></div>'
+    + '<button class="Ldt-Ctrl-FullScreen-Button"><img id="Ldt-Ctrl-FullScreen-Button" src="../widgets/img/FS.png" title="Plein écran vidéo + slides" style="width:30px;height:30px; margin: -5px 10px 0;"></button>'
+    + '</div>'
     + '<div class="Ldt-Ctrl-spacer"></div>'
     + '<div class="Ldt-Ctrl-Time">'
     + '<div class="Ldt-Ctrl-Time-Elapsed" title="{{l10n.elapsed_time}}">00:00</div>'
@@ -100,6 +104,7 @@ IriSP.Widgets.Controller.prototype.draw = function() {
     this.$volumeBar = this.$.find(".Ldt-Ctrl-Volume-Bar");
     this.$createQuizz = this.$.find(".Ldt-Ctrl-Quizz-Create");
 	this.$enableQuizz = this.$.find(".Ldt-Ctrl-Quizz-Enable");
+	this.$fullScreen = this.$.find(".Ldt-Ctrl-FullScreen-Button");
 
     // handle events
     this.onMediaEvent("play","playButtonUpdater");
@@ -140,6 +145,7 @@ IriSP.Widgets.Controller.prototype.draw = function() {
 	//enable quizz
 	this.$enableQuizz.click(this.functionWrapper("toggleQuizz"));
 	this.$createQuizz.click(this.functionWrapper("createQuizz"));
+	this.$fullScreen.click(this.functionWrapper("fullScreen"));
 
 	var _volctrl = this.$.find(".Ldt-Ctrl-Volume-Control");
     this.$.find('.Ldt-Ctrl-Sound')
@@ -239,7 +245,22 @@ IriSP.Widgets.Controller.prototype.playButtonUpdater = function() {
             .addClass("Ldt-Ctrl-Play-PauseState");
     }
 };
-
+var isFullScreen = false;
+//FullScreen
+IriSP.Widgets.Controller.prototype.fullScreen = function() {
+		
+		if (isFullScreen) {
+								console.log("Exit FullScreen");
+								isFullScreen = false;
+								delete IriSP.setFullScreen(this.$[0],0);
+								this.$.removeClass("fullScreen");}
+		else  {
+				isFullScreen = true;
+				console.log("Go FullScreen, go");
+				IriSP.setFullScreen(this.$[0],1);
+				this.$.addClass("fullScreen");}
+		
+};
 //Quizz
 IriSP.Widgets.Controller.prototype.createQuizz = function() {
 	if ( typeof this.create_quizz_callback != "undefined" ) {
