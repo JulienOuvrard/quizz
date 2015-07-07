@@ -77,34 +77,31 @@ IriSP.loadCss = function(_cssFile) {
         IriSP._cssCache.push(_cssFile);
     }
 };
-IriSP.setFullScreen= function(elem, i){
-        // Toggle fullscreen
-        if (i==1) {
-			
-			if (elem.requestFullscreen) {
-				elem.requestFullscreen();
-			} else if (elem.mozRequestFullScreen) {
-				elem.mozRequestFullScreen();
-			} else if (elem.webkitRequestFullscreen) {
-				elem.webkitRequestFullscreen();
-			}else if (elem.msRequestFullscreen) {
-				elem.msRequestFullscreen();
-			}
+IriSP.setFullScreen= function(elem, value) {
+    // Set fullscreen on or off
+    if (value) {
+		if (elem.requestFullscreen) {
+			elem.requestFullscreen();
+		} else if (elem.mozRequestFullScreen) {
+			elem.mozRequestFullScreen();
+		} else if (elem.webkitRequestFullscreen) {
+			elem.webkitRequestFullscreen();
+		} else if (elem.msRequestFullscreen) {
+			elem.msRequestFullscreen();
 		}
-		else {
-      if (document.exitFullscreen) {
-        document.exitFullscreen();
-      } else if (document.msExitFullscreen) {
-        document.msExitFullscreen();
-      } else if (document.mozCancelFullScreen) {
-        document.mozCancelFullScreen();
-      } else if (document.webkitExitFullscreen) {
-        document.webkitExitFullscreen();
-      }
+	} else {
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        } else if (document.msExitFullscreen) {
+            document.msExitFullscreen();
+        } else if (document.mozCancelFullScreen) {
+            document.mozCancelFullScreen();
+        } else if (document.webkitExitFullscreen) {
+            document.webkitExitFullscreen();
+        }
     }
-		
-			
 };
+
 IriSP.textFieldHtml = function(_text, _regexp, _extend) {
     var list = [],
         positions = [],
