@@ -61,14 +61,16 @@ body {
  * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
  */
 
- img {
-    vertical-align: middle;
+img {
+     vertical-align: middle;
 }
 .svg-content{
-display: block;
-margin: auto;
-top: 0;
-left:0;
+    display: block;
+    margin: auto;
+    top: 0;
+    left:0;
+    width: 80%;
+    max-width: 800px;
 }
 
 /*
