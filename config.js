@@ -136,19 +136,17 @@ $("#take_the_tour").click( function (e) {
 });
 var globalFullScreen = false;
 $("#FullScreen-Button").click( function () {
-
-					if (globalFullScreen) {
-								console.log("Exit FullScreen");
-								globalFullScreen = false;
-								delete IriSP.setFullScreen(content,0);
-								this.$.removeClass("fullScreen");}
-		else  {
-				globalFullScreen = true;
-				console.log("Go FullScreen, go");
-				IriSP.setFullScreen(content,1);
-				this.$.addClass("fullScreen");}
-					
+	if (globalFullScreen) {
+		globalFullScreen = false;
+		delete IriSP.setFullScreen(document.getElementById("content"), false);
+		$("#content").removeClass("fullScreen");}
+	else {
+		globalFullScreen = true;
+	    IriSP.setFullScreen(document.getElementById("content"), true);
+	    $("#content").addClass("fullScreen");
+    }
 });
+
 $(".popup_action").click( function (e) {
     $( "#" + this.getAttribute('id') + "_message" ).dialog({
         modal: true,
