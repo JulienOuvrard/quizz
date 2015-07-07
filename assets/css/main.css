@@ -105,7 +105,9 @@ body {
 	padding-bottom: 20px;
 }
 #cadre {
-  border-radius: 10px;
+    margin-top: 1em;
+    border-radius: 10px;
+    font-size: 32px;
 }
 .row {
 margin-right: 0px;
@@ -647,3 +649,6 @@ a:after {
 	}
 }
 
+.subtitle {
+    font-size: 16px;
+}
