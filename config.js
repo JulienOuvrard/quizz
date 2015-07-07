@@ -134,7 +134,21 @@ _myPlayer.on("Annotation.publish", function (a) {
 $("#take_the_tour").click( function (e) {
     take_the_tour();
 });
+var globalFullScreen = false;
+$("#FullScreen-Button").click( function () {
 
+					if (globalFullScreen) {
+								console.log("Exit FullScreen");
+								globalFullScreen = false;
+								delete IriSP.setFullScreen(content,0);
+								this.$.removeClass("fullScreen");}
+		else  {
+				globalFullScreen = true;
+				console.log("Go FullScreen, go");
+				IriSP.setFullScreen(content,1);
+				this.$.addClass("fullScreen");}
+					
+});
 $(".popup_action").click( function (e) {
     $( "#" + this.getAttribute('id') + "_message" ).dialog({
         modal: true,
