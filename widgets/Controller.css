@@ -179,21 +179,35 @@ input.Ldt-Ctrl-SearchInput {
 
 /* quizz */
 
-.Ldt-Ctrl-Quizz-Create {
-	width:50px;
-}
-
-.Ldt-Ctrl-Quizz-Enable {
-	width:40px;
-	height: 20px;
-}
-.Ldt-Ctrl-Quizz-Enable-Button: hover{
-background-color: red;
-}
-
 .Ldt-Ctrl-Quizz-Enable button, .Ldt-Ctrl-Quizz-Create button, .Ldt-Ctrl-Quizz-Disactivated button, .Ldt-Ctrl-FullScreen-Button{
-	width: 100%;
+	
 	border:none;
 	background: transparent;
 	}
 	 .Ldt-Ctrl-FullScreen-Button { margin-top:3px;}
+	 
+.Ldt-Ctrl-Quizz-Enable-Button {
+  float:left;
+  height: 23px;
+  width: 22px;
+  background-repeat: no-repeat;
+}
+
+.Ldt-Ctrl-Quizz-Create {
+  float:left;
+  height: 22px;
+  width: 22px;
+  background-repeat: no-repeat;
+  margin-left: 14px;
+  margin-top: -1px;
+	background: transparent;
+}
+ .Ldt-Ctrl-FullScreen-Button {
+  background-image:url("../widgets/img/FS.svg");
+  background-position: right;
+  margin-right: 6px;
+  margin-top: 1px;
+  height: 22px;
+  width: 22px;
+  border: none;
+ }
