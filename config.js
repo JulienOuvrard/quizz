@@ -134,14 +134,12 @@ _myPlayer.on("Annotation.publish", function (a) {
 $("#take_the_tour").click( function (e) {
     take_the_tour();
 });
-var globalFullScreen = false;
+
 $("#FullScreen-Button").click( function () {
-	if (globalFullScreen) {
-		globalFullScreen = false;
+	if (document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement) {
 		delete IriSP.setFullScreen(document.getElementById("content"), false);
 		$("#content").removeClass("fullScreen");}
 	else {
-		globalFullScreen = true;
 	    IriSP.setFullScreen(document.getElementById("content"), true);
 	    $("#content").addClass("fullScreen");
     }
