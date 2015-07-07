@@ -597,10 +597,10 @@ div.hopscotch-bubble {
 }
 #ControlledVideoPlayer.fullScreen{width: 100%;height: 100%;}
 
-.FullScreen-Button{width:100%;height:35px;  text-align:center;background:url("../widgets/img/FS.svg");
+.FullScreen-Button{width:100%;height:35px;  text-align:center;background:url("widgets/img/FS.svg");
     background-size: 34px 34px;
     background-repeat: no-repeat;
-    background-position: center	;}
+    background-position: center;}
 
 
 
