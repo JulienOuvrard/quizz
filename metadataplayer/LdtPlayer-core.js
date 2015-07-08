@@ -101,6 +101,9 @@ IriSP.setFullScreen= function(elem, value) {
         }
     }
 };
+IriSP.isfullscreen = function() {
+	return (document.fullscreenElement ||  document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement);		
+};
 
 IriSP.textFieldHtml = function(_text, _regexp, _extend) {
     var list = [],
@@ -1568,11 +1571,7 @@ IriSP.htmlPlayer = function(media, jqselector, options) {
     videoEl.on("seeked", function() {
         media.trigger("seeked");
     });
-    
-    videoEl.on("dblclick", function () {
-        // Toggle fullscreen
-        IriSP.setFullScreen(videoEl[0],1);
-    });
+
 };
 /* START contentapi-serializer.js */
 

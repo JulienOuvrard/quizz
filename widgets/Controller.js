@@ -238,13 +238,15 @@ IriSP.Widgets.Controller.prototype.playButtonUpdater = function() {
 
 //FullScreen
 IriSP.Widgets.Controller.prototype.fullScreen = function() {
-		
-	if (document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement) {
+    var eventname = (document.fullscreenElement && "fullscreenchange") || (document.webkitFullscreenElement && "webkitFullscreenElement") || (document.mozFullScreenElement && "mozFullScreenElement") ||  (document.msFullscreenElement&& "msFullscreenElement") || "";
+    
+	if (eventname) {
 		IriSP.setFullScreen(this.$[0],false);
-		_this.$.removeClass("fullScreen");}
+		this.$.removeClass("fullScreen");}
 	else  {
+		
 		IriSP.setFullScreen(this.$[0],true);
-		_this.$.addClass("fullScreen");}
+		this.$.addClass("fullScreen");}
 		
 };
 //Quizz
@@ -253,7 +255,6 @@ IriSP.Widgets.Controller.prototype.createQuizz = function() { console.log("Creat
 		this.create_quizz_callback();
 		this.player.trigger("Quizz.hide");
 		this.player.trigger("QuizzCreator.create");
-		this.create_quizz_callback();
 	}
 };
 
