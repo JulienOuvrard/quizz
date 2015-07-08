@@ -188,21 +188,22 @@ input.Ldt-Ctrl-SearchInput {
 	 
 .Ldt-Ctrl-Quizz-Enable-Button {
   float:left;
-  height: 23px;
+  height: 22px;
   width: 22px;
   background-repeat: no-repeat;
 }
 
 .Ldt-Ctrl-Quizz-Create {
+  background-image:url("../widgets/img/buzz.svg");
   float:left;
-  height: 22px;
-  width: 22px;
+  height: 23px;
+  width: 26px;
   background-repeat: no-repeat;
-  margin-left: 14px;
-  margin-top: -1px;
-	background: transparent;
+  margin-left: 4px;
+  margin-top: 0px;
 }
  .Ldt-Ctrl-FullScreen-Button {
+  float:left;
   background-image:url("../widgets/img/FS.svg");
   background-position: right;
   margin-right: 6px;
