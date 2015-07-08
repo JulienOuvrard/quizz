@@ -136,7 +136,7 @@ $("#take_the_tour").click( function (e) {
 });
 
 $("#FullScreen-Button").click( function () {
-	if (document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement) {
+	if (IriSP.isfullscreen()) {
 		delete IriSP.setFullScreen(document.getElementById("content"), false);
 		$("#content").removeClass("fullScreen");}
 	else {
