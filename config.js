@@ -22,7 +22,7 @@ var take_the_tour = function () {
             {
                 title: "Ajout de question",
                 content: '<img src="../widgets/img/quizzOn.svg" title="Ajouter une réponse" style="width:40px;height:40px;">'+": Quizz activé, cliquez pour le désactiver<br>"+'<img src="../widgets/img/quizzOff.svg" title="Ajouter une réponse" style="width:40px;height:40px;">'+": Quizz désactivé, cliquez pour l'activer<br>"+'<img src="../widgets/img/buzz.svg" title="Ajouter une réponse" style="width:40px;height:40px;">'+": Proposez vos propres questions, la saisie se fera dans l'onglet \"Edition Quizz\".",
-                target: ".Ldt-Ctrl-Quizz-Create Ldt-TraceMe",
+                target: ".Ldt-Ctrl-Quizz-Create",
                 placement: "top"
             },
             {
