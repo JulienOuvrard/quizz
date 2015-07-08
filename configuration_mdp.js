@@ -48,7 +48,11 @@ var configuration_mdp = function(vid_url) {
             disable_annotate_btn: true,
             always_show_search: true,
             fullscreen_widget: '#SlideVideoPlayer',
-            enable_quizz_toggle: true
+            enable_quizz_toggle: true,create_quizz_callback: function () {
+                    console.log("Quizz callback");
+                    $("#QuizzEditContainer").show();
+                    _tabs.tabs("option", "active", get_tab_index('#tab-quizz-edit'));
+                }
           },
             { type: "CreateAnnotation",
               annotation_type: "Contributions",

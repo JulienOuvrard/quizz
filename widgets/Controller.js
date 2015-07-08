@@ -37,14 +37,12 @@ IriSP.Widgets.Controller.prototype.template =
     + '<div class="Ldt-Ctrl-Quizz-Enable Ldt-TraceMe">'
     + '<button class="Ldt-Ctrl-Quizz-Enable-Button" title="Activer/Désactiver le quizz"></button>'
     + '</div>'
-    + '<div class="Ldt-Ctrl-Quizz-Create Ldt-TraceMe">'
-    + '<img src="../widgets/img/buzz.svg" title="Ajouter une question" >'
+    + '<div class="Ldt-TraceMe">'
+    + '<div class="Ldt-Ctrl-Quizz-Create" ></div>'
     + '</div>'
     + '</div>'
     + '<div class="Ldt-Ctrl-Right">'
-    + '<div style="float:left;" class="Ldt-Ctrl-Quizz Ldt-TraceMe">'
-    + '<button class="Ldt-Ctrl-FullScreen-Button" id="Ldt-Ctrl-FullScreen-Button"></button>'
-    + '</div>'
+    + '<div class="Ldt-Ctrl-FullScreen-Button"></div>'
     + '<div class="Ldt-Ctrl-spacer"></div>'
     + '<div class="Ldt-Ctrl-Time">'
     + '<div class="Ldt-Ctrl-Time-Elapsed" title="{{l10n.elapsed_time}}">00:00</div>'
@@ -250,11 +248,12 @@ IriSP.Widgets.Controller.prototype.fullScreen = function() {
 		
 };
 //Quizz
-IriSP.Widgets.Controller.prototype.createQuizz = function() {
+IriSP.Widgets.Controller.prototype.createQuizz = function() { console.log("Create question");
 	if ( typeof this.create_quizz_callback != "undefined" ) {
 		this.create_quizz_callback();
 		this.player.trigger("Quizz.hide");
 		this.player.trigger("QuizzCreator.create");
+		this.create_quizz_callback();
 	}
 };
 
