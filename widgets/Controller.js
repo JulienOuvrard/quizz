@@ -42,7 +42,7 @@ IriSP.Widgets.Controller.prototype.template =
     + '</div>'
     + '</div>'
     + '<div class="Ldt-Ctrl-Right">'
-    + '<div class="Ldt-Ctrl-FullScreen-Button" title="Passer le lecteur en plein-écran (Diapo + Vidéo)"></div>'
+    + '<div class="Ldt-Ctrl-FullScreen-Button"></div>'
     + '<div class="Ldt-Ctrl-spacer"></div>'
     + '<div class="Ldt-Ctrl-Time">'
     + '<div class="Ldt-Ctrl-Time-Elapsed" title="{{l10n.elapsed_time}}">00:00</div>'
