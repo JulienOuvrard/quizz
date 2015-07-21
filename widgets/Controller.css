@@ -204,11 +204,11 @@ input.Ldt-Ctrl-SearchInput {
 }
  .Ldt-Ctrl-FullScreen-Button {
   float:left;
-  background-image:url("../widgets/img/FS.svg");
+  background-image:url("../widgets/img/FS1.svg");
   background-position: right;
   margin-right: 6px;
   margin-top: 1px;
   height: 22px;
-  width: 22px;
+  width: 40px;
   border: none;
  }
